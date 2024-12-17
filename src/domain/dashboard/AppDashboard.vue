@@ -146,14 +146,14 @@ onMounted(async () => {
       </div>
     </div> -->
 
-    <div class="w-full">
+    <!-- <div class="w-full">
       <div class="w-12/12 count">
-        <!-- <p class="text-xl font-bold py-2">123</p> -->
-        <!-- <p class="text-xl font-bold py-2">{{ billingStore.serviceTransactions.length }}</p> -->
+        <p class="text-xl font-bold py-2">123</p>
+        <p class="text-xl font-bold py-2">{{ billingStore.serviceTransactions.length }}</p>
         <p class="text-xl font-bold py-2" style="font-size: 30px;">{{ totalTransactions }}</p>
         <p class="text-xs">Service Transactions</p>
       </div>
-    </div>
+    </div> -->
 
     <!-- <div class="w-full">
       <div class="w-12/12 count">
