@@ -41,7 +41,7 @@ export const useApplications = defineStore("applications", () => {
   const dummyServiceRequests: ServiceRequest[] = [
     { id: 1, requestDate: "2021-09-01", service: "Company Incorporation", status: "pending", applicant: "Till 004", trackingNo: "TRK-001"},
     { id: 2, requestDate: "2021-09-02", service: "Tax Clearance", status: "approved", applicant: "Till 005", trackingNo: "TRK-001"},
-    { id: 3, requestDate: "2021-09-03", service: "Company Incorporation", status: "rejected", applicant: "James Kangave", trackingNo: "TRK-001"},"},
+    { id: 3, requestDate: "2021-09-03", service: "Company Incorporation", status: "rejected", applicant: "James Kangave", trackingNo: "TRK-001"},
     { id: 4, requestDate: "2021-09-04", service: "Tax Clearance", status: "pending", applicant: "Till 006", trackingNo: "TRK-001"},
   ];
 
