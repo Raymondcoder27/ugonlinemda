@@ -41,11 +41,11 @@ const sideMenu: SideMenuLink[] = [
     label: "Service Subscriptions",
     iconClass: "fa-solid fa-list",
   },
-  {
-    name: "app-billing",
-    label: "Finances",
-    iconClass: "fa-solid fa-money-bill",
-  },
+  // {
+  //   name: "app-billing",
+  //   label: "Finances",
+  //   iconClass: "fa-solid fa-money-bill",
+  // },
   {
     name: "app-reports",
     label: "Reports",
