@@ -32,6 +32,11 @@ const sideMenu: SideMenuLink[] = [
   //   iconClass: "fa-solid fa-code-branch",
   // },
   {
+    name: "app-dashboard",
+    label: "Dashboard",
+    iconClass: "fa-solid fa-gauge",
+  },
+  {
     name: "app-agents",
     label: "Services",
     iconClass: "fa-solid fa-people-group",
@@ -71,11 +76,6 @@ const sideMenu: SideMenuLink[] = [
   //   label: "Gateway",
   //   iconClass: "fa-solid fa-server",
   // },
-  {
-    name: "app-dashboard",
-    label: "Dashboard",
-    iconClass: "fa-solid fa-gauge",
-  },
 
 ]
 const navigate: (link: SideMenuLink) => void = (link: SideMenuLink) => {
