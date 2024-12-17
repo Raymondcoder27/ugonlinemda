@@ -23,8 +23,8 @@ function select(tab: string) {
     <div class="flex pt-5">
       <div :class="(activeTab == 'backoffice') ? 'w-1/12 tab-active' : 'w-1/12 tab'" @click="select('backoffice')">
         Backoffice</div>
-        <div :class="(activeTab == 'branchmanagers') ? 'w-2/12 tab-active' : 'w-2/12 tab'" @click="select('branchmanagers')">
-          Branch Managers</div>
+        <!-- <div :class="(activeTab == 'branchmanagers') ? 'w-2/12 tab-active' : 'w-2/12 tab'" @click="select('branchmanagers')">
+          Branch Managers</div> -->
       <!-- <div :class="(activeTab == 'users') ? 'w-2/12 tab-active' : 'w-2/12 tab'" @click="select('users')">Public Users
       </div> -->
     </div>
