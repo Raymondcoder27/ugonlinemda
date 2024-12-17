@@ -414,9 +414,36 @@ watch(
               </div>
             </td> -->
             <td>
-              <span>
+              <div v-if="application.status == 'Pending'">
+                <span
+                  class="text-xs cursor-pointer rounded-md px-1 py-0.5 font-semibold text-gray-600 bg-gray-100 border border-gray-200 hover:text-gray-700 hover:bg-gray-200"
+                  @click="view(application)"
+                  >PENDING</span
+                >
+
+              </div>
+              <div v-else-if="application.status == 'Rejected'">
+                <label>
+                  <span
+                    class="text-xs cursor-pointer rounded-md px-1 py-0.5 font-semibold text-red-600 bg-red-100 border border-red-200 hover:text-red-700 hover:bg-red-200"
+                    @click="view(application)"
+                    >REJECTED</span
+                  >
+                </label>
+              </div>
+              <div v-else>
+                <label>
+                  <span
+                    class="text-xs cursor-pointer rounded-md px-1 py-0.5 font-semibold text-green-600 bg-green-100 border border-green-200 hover:text-green-700 hover:bg-green-200"
+                    @click="view(application)"
+                    >APPROVED</span
+                  >
+                </label>
+              </div>
+
+              <!-- <span>
                 {{ application.status }}
-              </span>
+              </span> -->
             </td>
             <td class="text-left">
               {{ convertDateTime(application.createdAt) }}

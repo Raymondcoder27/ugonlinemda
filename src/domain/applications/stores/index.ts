@@ -39,10 +39,10 @@ export const useApplications = defineStore("applications", () => {
 
   //dummy service requests
   const dummyServiceRequests: ServiceRequest[] = [
-    { id: 1, requestDate: "2021-09-01", serviceName: "Company Incorporation", status: "pending", applicant: "Mwebe Raymond", trackingNo: "TRK-001"},
-    { id: 2, requestDate: "2021-09-02", serviceName: "Tax Clearance", status: "approved", applicant: "Tumuhairwe Rodgers", trackingNo: "TRK-001"},
-    { id: 3, requestDate: "2021-09-03", serviceName: "Company Incorporation", status: "rejected", applicant: "James Kangave", trackingNo: "TRK-001"},
-    { id: 4, requestDate: "2021-09-04", serviceName: "Tax Clearance", status: "pending", applicant: "Mpagi Ronald", trackingNo: "TRK-001"},
+    { id: 1, requestDate: "2021-09-01", serviceName: "Company Incorporation", status: "Pending", applicant: "Mwebe Raymond", trackingNo: "TRK-001"},
+    { id: 2, requestDate: "2021-09-02", serviceName: "Tax Clearance", status: "Approved", applicant: "Tumuhairwe Rodgers", trackingNo: "TRK-001"},
+    { id: 3, requestDate: "2021-09-03", serviceName: "Company Incorporation", status: "Rejected", applicant: "James Kangave", trackingNo: "TRK-001"},
+    { id: 4, requestDate: "2021-09-04", serviceName: "Tax Clearance", status: "Pending", applicant: "Mpagi Ronald", trackingNo: "TRK-001"},
   ];
 
   const serviceRequests: Ref<ServiceRequest[]> = ref(dummyServiceRequests);
