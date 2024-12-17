@@ -43,11 +43,10 @@ onMounted(() => {
       <Header />
       <main class="h-full flex flex-col">
         <div class="flex flex-row h-full">
-          <!-- <SideMenu /> -->
-          <!-- <TopMenu /> -->
+          <SideMenu />
           <div class="flex flex-col flex-grow">
             <!-- Main Content Goes Here -->
-            <div class="relative w-full flex-grow bg-white p-2">
+            <div class="relative w-full flex-grow bg-gray-50 p-2">
               <RouterView />
             </div>
             <!-- /Main Content Goes Here -->

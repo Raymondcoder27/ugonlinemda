@@ -18,12 +18,10 @@ import AppEntities from "../domain/entities/AppEntities.vue";
 import AppDashboard from "../domain/dashboard/AppDashboard.vue";
 import AppAgents from "../domain/agents/AppAgents.vue";
 import AppGateway from "../domain/gateway/AppGateway.vue";
-import AppFinances from "../domain/finances/AppFinances.vue";
+// import AppFinances from "../domain/finances/AppFinances.vue";
+import Billing from "../domain/billing/Billing.vue";
 import ServicesDetails from "../domain/servicesdetails/ServicesDetails.vue";
 import Branches from "../domain/branches/AppBranches.vue";
-import Ledger from "../domain/ledger/Ledger.vue";
-import Submissions from "../domain/submissions/Submissions.vue";
-import AppServices from "../domain/services/AppServices.vue";
 
 declare module "vue-router" {
   interface RouteMeta {
@@ -38,69 +36,66 @@ const appRoutes: RouteRecordRaw[] = [
     redirect: { name: "app-home" },
   },
   {
-    path: "/agent",
+    path: "/agent-admin",
     name: "app-home",
     component: MainLayout,
     meta: { requiresAuth: false },
-
-    // component: () => import("@/domain/dashboard/AppDashboard.vue"),
-        redirect: "/agent/services",
-
+    redirect: "/agent-admin/dashboard",
     children: [
       {
-        name: "app-services",
-        path: "/agent/services",
-        component: AppServices,
+        name: "app-dashboard",
+        path: "/agent-admin/dashboard",
+        component: AppDashboard,
       },
       {
         name: "app-entities",
-        path: "/agent/entities",
+        path: "/agent-admin/entities",
         component: AppEntities,
       },
       {
+        name: "app-agents",
+        path: "/agent-admin/agents",
+        component: AppAgents,
+      },
+      {
         name: "app-services",
-        path: "/agent/services",
+        path: "/agent-admin/services",
         component: Services,
       },
       {
         name: "app-branches",
-        path: "/agent/branches",
+        path: "/agent-admin/branches",
         component: Branches,
       },
       {
         name: "app-accounts",
-        path: "/agent/accounts",
+        path: "/agent-admin/accounts",
         component: Accounts
       },
       {
         name: "app-configurations",
-        path: "/agent/configurations",
+        path: "/agent-admin/configurations",
         component: Settings
       },
       {
-        name: "app-ledger",
-        path: "/agent/ledger",
-        component: Ledger
+        name: "app-reports",
+        path: "/agent-admin/data-analytics",
+        component: DataAnalytics
       },
       {
         name: "app-services-details",
-        path: "/agent/services-details",
+        path: "/agent-admin/services-details",
         component: ServicesDetails
       },
       {
-        name: "app-finances",
-        path: "/agent/finances",
-        component: AppFinances
+        name: "app-billing",
+        path: "/agent-admin/billing",
+        component: Billing
       },
       {
         name: "app-gateway",
-        path: "/agent/gateway",
+        path: "/agent-admin/gateway",
         component: AppGateway
-      },
-      {
-        name: "app-submissions",
-        path: "/agent/submissions",
-        component: Submissions
       },
     ]
   },

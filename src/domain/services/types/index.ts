@@ -21,6 +21,7 @@ export type Service = {
     currentVersionId:string
 };
 
+
 export type ServiceSpecification = {
     id: string;
     providerId:string

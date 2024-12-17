@@ -110,7 +110,7 @@ watch(
             <table class="table">
               <thead>
               <tr class="header-tr">
-                <th class="t-header">#</th>
+                <!-- <th class="t-header">#</th> -->
                 <th class="t-header">Name</th>
                 <th class="t-header">Display Name</th>
                 <th class="t-header">Type</th>
@@ -131,7 +131,7 @@ watch(
               </thead>
               <tbody v-if="store.providers">
               <tr class="body-tr" v-for="(provider, idx) in store.providers" :key="idx">
-                <td width="10px">{{ idx + 1 }}.</td>
+                <!-- <td width="10px">{{ idx + 1 }}.</td> -->
                 <td>
                   <div class="flex">
                     <img v-if="provider.displayLogo" :src="provider.displayLogo" class="avi rounded-full" alt="thumb" />

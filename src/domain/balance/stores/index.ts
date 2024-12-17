@@ -1,5 +1,10 @@
 import { defineStore } from "pinia";
-import { ref, reactive } from "vue";
+import { reactive } from "vue";
+// Pinia store
+import { watchEffect } from "vue";
+
+
+
 
 export interface TotalBalance {
   prev: number;
@@ -7,91 +12,55 @@ export interface TotalBalance {
 }
 
 export const useBalance = defineStore("balance", () => {
-  // Initial dummy data for total balance
-
+  // Reactive state for total balance
   const totalBalance = reactive<TotalBalance>({
-    prev: 0,
-    current: 15405000, // Initial balance
+    prev: 300000000, // Initial previous balance
+    current: 300000000, // Initial current balance
   });
 
-  // Fetch the total balance (dummy data for now)
+  watchEffect(() => {
+    console.log("Total balance changed:", totalBalance);
+  });
+
+  // Simulate fetching the balance from an API
   // async function fetchTotalBalance() {
-  //   // Simulate API call
-  //   totalBalance.value = { ...dummyTotalBalance };
-  // }
-
-  // Increase the total balance and update the "prev" value
-  // async function increaseTotalBalance(amount: number) {
-  //   totalBalance.value = {
-  //     prev: totalBalance.value.current,
-  //     current: totalBalance.value.current + amount,
-  //   };
-  // }
-
-  // Increase balance
-// async function increaseTotalBalance(amount: number) {
-//   totalBalance.value.prev = totalBalance.value.current;
-//   totalBalance.value.current += amount; // Mutating individual properties
-// }
-
-
-  // Decrease the total balance and update the "prev" value
-  // async function decreaseTotalBalance(amount: number) {
-  //   totalBalance.value = {
-  //     prev: totalBalance.value.current,
-  //     current: totalBalance.value.current - amount,
-  //   };
-  // }
-
-  // async function decreaseTotalBalance(amount: number) {
-  //   console.log("Previous:", totalBalance.value.prev, "Current:", totalBalance.value.current);
-  //   totalBalance.value = {
-  //     prev: totalBalance.value.current,
-  //     current: totalBalance.value.current - amount,
-  //   };
-  //   console.log("Updated:", totalBalance.value);
-  // }
-
-  // dummyTotalBalance.current = totalBalance.value.current;
-
-  // totalBalance.value = { ...dummyTotalBalance };
-
-    // Increase the total balance and update the "prev" value
-    async function increaseTotalBalance(amount: number) {
-      totalBalance.prev = totalBalance.current;
-      totalBalance.current += amount;
-    }
-  
-    // Decrease the total balance and update the "prev" value
-    async function decreaseTotalBalance(amount: number) {
-      totalBalance.prev = totalBalance.current;
-      totalBalance.current -= amount;
-    }
-
-   // Fetch the total balance (Simulate API call)
-  //  async function fetchTotalBalance() {
-  //   // Simulate fetching updated balance data
+  //   // Simulate fetching data (replace with actual API call)
   //   const fetchedBalance = {
-  //     prev: totalBalance.prev,
-  //     current: totalBalance.current, // Example fetched balance
+  //     prev: totalBalance.current, // Setting previous balance to the current value
+  //     current: 400000000, // Example of updating balance to a new value
   //   };
-  //   Object.assign(totalBalance, fetchedBalance);
+    
+  //   // Update totalBalance reactive state
+  //   totalBalance.prev = fetchedBalance.prev;
+  //   totalBalance.current = fetchedBalance.current;
   // }
 
-  async function fetchTotalBalance() {
-    console.log("Fetching balance...");
-    const fetchedBalance = {
-      prev: totalBalance.prev, // Setting previous balance to the current value
-      current: totalBalance.current, // Example of updating balance to a new value
-    };
-  
-    console.log("Fetched balance:", fetchedBalance); // Debugging
-    totalBalance.prev = fetchedBalance.prev;
-    totalBalance.current = fetchedBalance.current;
-    console.log("Updated balance in store:", totalBalance); // Debugging
+
+  // Increase the total balance and update "prev"
+  function increaseTotalBalance(amount: number) {
+    totalBalance.prev = totalBalance.current;
+    totalBalance.current += amount;
   }
 
-  
+  // Decrease the total balance and update "prev"
+  function decreaseTotalBalance(amount: number) {
+    totalBalance.prev = totalBalance.current;
+    totalBalance.current -= amount;
+  }
+
+    // Pinia Store (balance store)
+async function fetchTotalBalance() {
+  console.log("Fetching balance...");
+  const fetchedBalance = {
+    prev: totalBalance.prev, // Setting previous balance to the current value
+    current: totalBalance.current, // Example of updating balance to a new value
+  };
+
+  console.log("Fetched balance:", fetchedBalance); // Debugging
+  totalBalance.prev = fetchedBalance.prev;
+  totalBalance.current = fetchedBalance.current;
+  console.log("Updated balance in store:", totalBalance); // Debugging
+}
 
   return {
     totalBalance,

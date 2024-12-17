@@ -1,0 +1,50 @@
+{
+  "hash": "f10ab1bf",
+  "browserHash": "c879c7a2",
+  "optimized": {
+    "vue": {
+      "src": "../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "03a35eef",
+      "needsInterop": false
+    },
+    "vue3-apexcharts": {
+      "src": "../../node_modules/vue3-apexcharts/dist/vue3-apexcharts.common.js",
+      "file": "vue3-apexcharts.js",
+      "fileHash": "64d02a63",
+      "needsInterop": true
+    },
+    "pinia": {
+      "src": "../../node_modules/pinia/dist/pinia.mjs",
+      "file": "pinia.js",
+      "fileHash": "9f91e48a",
+      "needsInterop": false
+    },
+    "vue-router": {
+      "src": "../../node_modules/vue-router/dist/vue-router.mjs",
+      "file": "vue-router.js",
+      "fileHash": "de9ccc1e",
+      "needsInterop": false
+    },
+    "moment": {
+      "src": "../../node_modules/moment/dist/moment.js",
+      "file": "moment.js",
+      "fileHash": "57127e45",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-3GOOGFKQ": {
+      "file": "chunk-3GOOGFKQ.js"
+    },
+    "chunk-4WBDFGAB": {
+      "file": "chunk-4WBDFGAB.js"
+    },
+    "chunk-HRMEWSZN": {
+      "file": "chunk-HRMEWSZN.js"
+    },
+    "chunk-6NOISVLF": {
+      "file": "chunk-6NOISVLF.js"
+    }
+  }
+}

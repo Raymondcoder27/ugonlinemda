@@ -26,29 +26,29 @@ const sideMenu: SideMenuLink[] = [
     label: "Dashboard",
     iconClass: "fa-solid fa-gauge",
   },
-  {
-    name: "app-entities",
-    label: "Customers",
-    iconClass: "fa-solid fa-people-group",
-  },
-  //{
-   // name: "app-agents",
-  //  label: "Agents",
-   // iconClass: "fa-solid fa-people-group",
-  //},
   // {
-  //   name: "app-branches",
-  //   label: "Branches",
-  //   iconClass: "fa-solid fa-code-branch",
+  //   name: "app-entities",
+  //   label: "Entities",
+  //   iconClass: "fa-solid fa-landmark",
+  // },
+  {
+    name: "app-branches",
+    label: "Branches",
+    iconClass: "fa-solid fa-code-branch",
+  },
+  // {
+  //   name: "app-agents",
+  //   label: "Agents",
+  //   iconClass: "fa-solid fa-people-group",
   // },
   {
     name: "app-services",
-    label: "Services",
+    label: "Service Subscriptions",
     iconClass: "fa-solid fa-list",
   },
   {
-    name: "app-finances",
-    label: "Finances Vault",
+    name: "app-billing",
+    label: "Finances",
     iconClass: "fa-solid fa-money-bill",
   },
   {
@@ -56,26 +56,26 @@ const sideMenu: SideMenuLink[] = [
     label: "Reports",
     iconClass: "fa-solid fa-chart-line"
   },
-  {
-    name: "app-services-details",
-    label: "Services Details",
-    iconClass: "fa-solid fa-list"
-  },
+  // {
+  //   name: "app-services-details",
+  //   label: "Services Details",
+  //   iconClass: "fa-solid fa-list"
+  // },
   {
     name: "app-accounts",
     label: "Accounts",
     iconClass: "fa-solid fa-users",
   },
-  {
-    name: "app-configurations",
-    label: "Configurations",
-    iconClass: "fa-solid fa-sliders",
-  },
-  {
-    name: "app-gateway",
-    label: "Gateway",
-    iconClass: "fa-solid fa-server",
-  },
+  // {
+  //   name: "app-configurations",
+  //   label: "Configurations",
+  //   iconClass: "fa-solid fa-sliders",
+  // },
+  // {
+  //   name: "app-gateway",
+  //   label: "Gateway",
+  //   iconClass: "fa-solid fa-server",
+  // },
 
 ]
 const navigate: (link: SideMenuLink) => void = (link: SideMenuLink) => {

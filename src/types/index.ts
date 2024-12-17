@@ -45,6 +45,63 @@ export interface CreateAccount {
   phone: string;
 }
 
+// // allocate float interface
+export interface AllocateFloat {
+  firstName: string;
+  branchId: string | null;
+}
+
+
+// AddManager
+export interface AddManager {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  role: string;
+  branchId: string | null;
+}
+
+export interface ManagerAccount {
+  id: string;
+  status: string;
+  firstName: string;
+  lastName: string;
+  middleNames: string;
+  username: string;
+  email: string;
+  branchName: string;
+  phone: string;
+  role: string;
+  createdAt: string;
+  emailVerified: boolean;
+  phoneVerified: boolean;
+  activatedAt: string;
+}
+
+export interface BackOfficeAccount {
+  id: string;
+  status: string;
+  firstName: string;
+  lastName: string;
+  middleNames: string;
+  username: string;
+  email: string;
+  phone: string;
+  role: string;
+  createdAt: string;
+  emailVerified: boolean;
+  phoneVerified: boolean;
+  activatedAt: string;
+}
+
+// AllocateManager type
+export interface AssignManager {
+  // branchId: string | null;
+  managerId: string | null;
+}
+
+
 export interface ApiSuccess {
   status: number
   data: Object

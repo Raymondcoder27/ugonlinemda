@@ -141,11 +141,11 @@ watch(
             <th class="t-header" width="30%">Names</th>
             <th class="t-header">Email</th>
             <th class="t-header">Phone</th>
-            <th class="text-center">Role</th>
+            <!-- <th class="text-center">Role</th> -->
             <th class="text-center">Status</th>
-            <th class="text-center">Activation</th>
             <th class="text-center">Date</th>
-            <th class="t-header"></th>
+            <th class="text-center">Actions</th>
+            <!-- <th class="t-header"></th> -->
           </tr>
         </thead>
         <tbody>
@@ -161,7 +161,7 @@ watch(
             </td>
             <td>
               <a class="underline" :href="'smtp:' + account.username">
-                {{ account.username }}
+                {{ account.email }}
               </a>
               <i class="fa-solid fa-exclamation-triangle text-red-600" v-if="!account.emailVerified"></i>
             </td>
@@ -169,27 +169,29 @@ watch(
               {{ account.phone }} <i class="fa-solid fa-exclamation-triangle text-red-600"
                 v-if="!account.phoneVerified"></i>
             </td>
-            <td class="text-center">
+            <!-- <td class="text-center">
               {{ account.role }}
-            </td>
+            </td> -->
             <td class="text-center">
               <label v-if="account.blockedAt" class="text-red-600 font-bold">BLOCKED</label>
-              <label v-else class="text-green-600 font-bold">ACTIVE</label>
+              <label v-else class="text-green-600 text-xs bg-green-100 border border-green-200 rounded-sm px-1 py-0.5 font-bold">ACTIVE</label>
             </td>
-            <td class="text-center">
+            <!-- <td class="text-center">
               <i v-if="account.activatedAt" class="fa-solid fa-check-square text-green-600"></i>
               <i v-else class="fa-solid fa-times-square text-red-600"></i>
-            </td>
+            </td> -->
             <td class="text-center">{{ convertDate(account.createdAt) }}</td>
             <td class="text-center">
               <div class="flex flex-row space-x-2 w-full justify-center" v-if="!account.blockedAt">
                 <i class="text-gray-600 fa-solid fa-pencil px-1 border border-gray-300 p-1 hover:text-white hover:bg-gray-600"
                   @click="open()"></i>
-                <i class="text-gray-600 fa-solid fa-reply px-1 border border-gray-300 p-1 hover:text-white hover:bg-gray-600"
+                  <i class="text-gray-600 fa-solid fa-trash px-1 border border-gray-300 p-1 hover:text-white hover:bg-gray-600"
                   @click="open()"></i>
-                <i v-if="account.phoneVerified && !account.activatedAt"
+                <!-- <i class="text-gray-600 fa-solid fa-reply px-1 border border-gray-300 p-1 hover:text-white hover:bg-gray-600"
+                  @click="open()"></i> -->
+                <!-- <i v-if="account.phoneVerified && !account.activatedAt"
                   class="text-gray-600 fa-solid fa-unlock-keyhole px-1 border border-gray-300 p-1 hover:text-white hover:bg-gray-600"
-                  @click="resend('change-password', account.username)" title="Change Password"></i>
+                  @click="resend('change-password', account.username)" title="Change Password"></i> -->
               </div>
             </td>
           </tr>
@@ -214,7 +216,7 @@ watch(
 
   <!-- Modal -->
   <AppModal v-model="modalOpen" xl2>
-    <CreateAccount @cancel="close" />
+    <CreateAccount @backOfficeAccountCreated="close" @cancel="close" />
   </AppModal>
   <!-- /Modal -->
 </template>

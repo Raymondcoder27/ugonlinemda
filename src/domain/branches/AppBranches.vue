@@ -1,142 +1,211 @@
 <script setup lang="ts">
 import AppModal from "@/components/AppModal.vue";
-import { onMounted, type Ref, ref, watch } from "vue";
-// import CreateService from "@/domain/services/components/CreateService.vue";
-import CreateBranch from "@/domain/branches/components/CreateBranch.vue"
-import { useServicesStore } from "@/domain/services/stores";
-import type { Service } from "@/domain/services/types";
-import EditService from "@/domain/services/components/EditService.vue";
-import ServiceSpecificationDetails from "@/domain/services/views/ServiceSpecificationDetails.vue";
+import { onMounted, ref, type Ref, watch } from "vue";
+import CreateBranch from "@/domain/branches/components/CreateBranch.vue";
+import { useBranchStore } from "@/domain/branches/stores"; // Updated import
+import type { Branch } from "@/domain/branches/types"; // Assuming you have a Branch type
 import moment from "moment/moment";
 import router from "@/router";
 import { useProviderStore } from "@/domain/entities/stores";
-import CategorySelector from "@/domain/settings/components/CategorySelector.vue";
+import AssignBranchManager from "@/domain/branches/components/AssignBranchManager.vue";
+// import CategorySelector from "@/domain/settings/components/CategorySelector.vue";
 import { useNotificationsStore } from "@/stores/notifications";
 import type { ApiError } from "@/types";
-import TableLoader from "@/components/TableLoader.vue";
+import { useAccountStore } from "../auth/stores";
+// import TableLoader from "@/components/TableLoader.vue";
 
-const store = useServicesStore();
+import { useAccounts } from "@/domain/accounts/stores";
+const accountStore = useAccounts();
+const branchStore = useBranchStore(); // Updated store
 const modalOpen: Ref<boolean> = ref(false);
 const categoryModalOpen: Ref<boolean> = ref(false);
-const specModalOpen: Ref<boolean> = ref(false);
 const editModalOpen: Ref<boolean> = ref(false);
+const assignManagerModalOpen: Ref<boolean> = ref(false);
 const page: Ref<number> = ref(1);
 const limit: Ref<number> = ref(16);
-const loading: Ref<boolean> = ref(false)
-const selectedService: Ref<string> = ref("")
-let providerId = ref("")
-let status = ref("")
-const notify = useNotificationsStore()
+const loading: Ref<boolean> = ref(false);
+const selectedBranch: Ref<string> = ref("");
+// let providerId = ref("");
+let status = ref("");
+const notify = useNotificationsStore();
 
-const providerStore = useProviderStore()
+// Helper function to get manager by branch
+const getManagerByBranch = (branchName) => {
+  return accountStore.managerAccounts.find(
+    (manager) => manager.branch === branchName
+  );
+};
+
+//Helper function to get manager by backoffice account
+// const getBackOfficeAccount = (branchName) => {
+//   return accountStore.backofficeAccounts.find(
+//     (backofficeAccount) => backofficeAccount.branch = branchName
+//   );
+// };
+
 onMounted(() => {
-  loading.value = true
-  fetch()
-  if (providerStore.providers == undefined) {
-    providerStore.fetchProviders(1, 35)
-      .then(() => (loading.value = false))
-      .catch(() => {
-        loading.value = false
-      })
-  }
-})
+  loading.value = true;
+  fetchBranches();
+});
 
-function fetch() {
-  store.fetchServices(page.value, limit.value)
+function fetchBranches() {
+  branchStore
+    .fetchBranches(page.value, limit.value)
     .then(() => (loading.value = false))
     .catch((error: ApiError) => {
-      loading.value = false
-      notify.error(error.response.data.message)
-    })
+      loading.value = false;
+      notify.error(error.response.data.message);
+    });
 }
 
-function edit(service: Service) {
-  localStorage.setItem("service", JSON.stringify(service))
+function open(branch: Branch) {
+  router.push({ name: "branch-details", params: { id: branch.id } });
+}
+
+// edit branch
+function edit(branch: Branch) {
+  localStorage.setItem("branch", JSON.stringify(branch));
   editModalOpen.value = true;
 }
 
-function spec(service: Service) {
-  selectedService.value = service.id
-  localStorage.clear()
-  localStorage.setItem("service", JSON.stringify(service))
-  specModalOpen.value = true;
-}
-
-function open(service: Service) {
-  router.push({ name: "service-details", params: { id: service.id } })
-}
-
-function tag(service: Service) {
-  selectedService.value = service.id
-  categoryModalOpen.value = true
+//configure branch
+function configure(branch: Branch) {
+  localStorage.setItem("branch", JSON.stringify(branch));
+  router.push({ name: "branch-configuration", params: { id: branch.id } });
 }
 
 function convertDateTime(date: string) {
-  return moment(date).format("DD-MM-YYYY HH:mm:ss")
+  return moment(date).format("DD-MM-YYYY HH:mm:ss");
+}
+
+// function deleteBranch(branch: Branch) {
+//   branchStore.deleteBranch(branch.id);
+//   notify.success("Branch Deleted");
+//   fetchBranches();
+// }
+
+// function deleteBranch(branch: Branch) {
+//     branchStore.deleteBranch(branch.id);
+//     fetchBranches();  // Refetch the branches after deleting
+//     notify.success("Branch Deleted");
+//   }
+
+function assignManager(branch: Branch) {
+  // Logic to open the modal or start the process
+  console.log(`Assigning manager for branch: ${branch.name}`);
+  selectedBranch.value = branch.id;
+  // Example: modalOpen.value = true;
+  assignManagerModalOpen.value = true;
+}
+
+function deleteBranch(branchId: string) {
+  branchStore.deleteBranch(branchId); // Assuming this is a mutation to remove the branch
+  // branchStore.branches = branchStore.branches.filter((b) => b.id !== branchId); // Manually update the store
+  // fetchBranches(); // Refetch the branches after deleting, if needed
+  notify.success("Branch Deleted");
 }
 
 function close() {
   modalOpen.value = false;
   editModalOpen.value = false;
-  specModalOpen.value = false;
+  assignManagerModalOpen.value = false;
 }
 
 function next() {
-  page.value += 1
-  fetch()
+  page.value += 1;
+  fetchBranches();
 }
 
 function previous() {
-  page.value -= 1
-  fetch()
+  page.value -= 1;
+  fetchBranches();
 }
 
-watch(
-  () => providerId.value,
-  (id: any) => {
-    console.log(id)
-  },
-  { deep: true }
-);
-
-// watch state of the modal
 watch(
   () => modalOpen.value,
   (isOpen: boolean) => {
     if (!isOpen) {
-      // do something if that's something you're interested in
     }
-  },
+  }
 );
+
+// Helper function to assign managers to branches
+const assignManagersToBranches = () => {
+  branchStore.branches.forEach((branch) => {
+    const manager = getManagerByBranch(branch.name);
+    if (manager) {
+      branch.manager = manager;
+    }
+  });
+};
+
+onMounted(() => {
+  accountStore.fetchManagerAccounts();
+  branchStore.fetchBranches();
+  accountStore.fetchManagerAccounts();
+  // allocateManager();
+  assignManagersToBranches();
+});
 </script>
 
 <template>
   <div class="w-full shadow-lg bg-white rounded p-2">
     <div class="flex">
       <div class="w-full py-1 text-primary-700">
-        <i class="bg-primary-100 border border-primary-200 p-2 rounded-full fa-solid fa-code-branch"></i>
+        <i
+          class="bg-primary-100 border border-primary-200 p-2 rounded-full fa-solid fa-code-branch"
+        ></i>
         <label class="text-lg mx-1">Branches</label>
       </div>
     </div>
     <div class="flex justify-between my-1">
       <div class="flex flex-col">
-        <div class="grid grid-cols-5">
-          <input class="filter-element e-input" type="text" placeholder="Search by Name" />
-          <select class="filter-element e-select" v-model="providerId">
+        <!-- <div class="grid grid-cols-5"> -->
+          <!-- <input
+            class="filter-element e-input"
+            type="text"
+            placeholder="Search by Name"
+          /> -->
+          <!-- <select class="filter-element e-select" v-model="providerId">
             <option :value="null">- Select Provider -</option>
-            <option v-for="(provider, idx) in providerStore.providers" :key="idx" :value="provider.id">{{ provider.name
-              }}
+            <option
+              v-for="(provider, idx) in providerStore.providers"
+              :key="idx"
+              :value="provider.id"
+            >
+              {{ provider.name }}
             </option>
-          </select>
-          <select class="filter-element e-select" v-model="status">
+          </select> -->
+          <!-- <select class="filter-element e-select" v-model="status">
             <option :value="null">- Select Status -</option>
             <option value="active">Active</option>
             <option value="inactive">Inactive</option>
-          </select>
+          </select> -->
+        <!-- </div> -->
+        <div
+          class="w-[50vw] bg-white rounded-md flex items-center justify-center border border-gray-100 px-4 focus:ring-2 focus:ring-red-500"
+        >
+          <input
+            type="text"
+            placeholder="Search Managers"
+            class="w-full text-sm border-none outline-none bg-white"
+          />
+          <i class="fas fa-search p-2 cursor-pointer text-gray-300 text-lg"></i>
+
+          <!-- <button
+      class="ml-4 px-6 py-2 bg-red-700 text-white rounded-md text-sm hover:bg-primary-600 transition duration-300 ease-in-out"
+      @click="search"
+    >
+      Search
+    </button> -->
         </div>
       </div>
       <div class="flex">
-        <button @click="modalOpen = true" class="button btn-sm my-auto" type="button">
+        <button
+          @click="modalOpen = true"
+          class="button btn-sm my-auto"
+          type="button"
+        >
           <i class="px-1 fa-solid fa-plus"></i> Add Branch
         </button>
       </div>
@@ -144,78 +213,154 @@ watch(
     <div class="flex my-1">
       <table class="table">
         <thead>
-          <tr class="header-tr">
-            <th class="t-header">#</th>
+          <tr class="">
+            <!-- <th class="t-header">#</th> -->
             <th class="t-header">Name</th>
-            <th class="t-header">Location</th>
-            <th class="t-header">Supervisor</th>
-            <th class="text-center">Access Tier</th>
-            <!-- <th class="text-center">Availability</th> -->
-            <th class="text-center">Status</th>
+            <th class="text-left">Manager</th>
             <th class="text-center">Date</th>
-            <th class="t-header"></th>
+            <!-- <th class="text-center">Actions</th> -->
+            <!-- <th class="t-header"></th> -->
           </tr>
         </thead>
         <thead v-if="loading">
           <tr>
-            <th colspan="12" style="padding: 0">
-              <div class="w-full bg-primary-300 h-1 p-0 m-0 animate-pulse"></div>
+            <th colspan="" style="padding: 0">
+              <div
+                class="w-full bg-primary-300 h-1 p-0 m-0 animate-pulse"
+              ></div>
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr class="body-tr" v-for="(service, idx) in store.services" :key="idx">
-            <td width="10px">{{ idx + 1 }}.</td>
+          <tr
+            class="body-tr"
+            v-for="(branch, idx) in branchStore.branches"
+            :key="idx"
+          >
+            <!-- <td width="10px">{{ idx + 1 }}.</td> -->
             <td>
-              <label class=" cursor-pointer font-bold hover:text-primary-700 mx-2">
-                <span class="hover:underline" @click="open(service)">
-                  {{ service.name }}
+              <label
+                class="cursor-pointer font-bold hover:text-primary-700 mx-2"
+              >
+                <span class="hover:underline" @click="open(branch)">
+                  {{ branch.name }}
                 </span>
-                <i class="fa-solid fa-link p-1 mx-1 text-gray-600 bg-gray-50 hover:text-primary-700"
-                  @click="tag(service)"></i>
+                <!-- <i
+                  class="fa-solid fa-link p-1 mx-1 text-gray-600 bg-gray-50 hover:text-primary-700"
+                  @click="tag(branch)"
+                ></i> -->
               </label>
             </td>
-            <td>
-              <label>{{ service.providerName }}</label>
+
+            <!-- <td class="text-black-700">
+              <div v-if="getManagerByBranch(branch.name)">
+                <label
+                  >{{ getManagerByBranch(branch.name).firstName }}
+                  {{ getManagerByBranch(branch.name).lastName }}</label
+                >
+              </div>
+              <div v-else>
+                <button
+                  class="bg-red-200 rounded-md font-semibold text-red-700 p-1 hover:underline"
+                  @click="allocateManager(branch)"
+                >
+                  Allocate Manager
+                </button>
+              </div>
+            </td> -->
+
+            <td class="text-black-700 text-left">
+              <!-- First Case: Manager linked via `getManagerByBranch()` -->
+              <div v-if="getManagerByBranch(branch.name)">
+                <label>
+                  {{ getManagerByBranch(branch.name).firstName }}
+                  {{ getManagerByBranch(branch.name).lastName }}
+                </label>
+              </div>
+
+              <!-- Second Case: Manager directly assigned to branch -->
+              <div v-else-if="branch.manager">
+                <label>
+                  {{ branch.manager.firstName }} {{ branch.manager.lastName }}
+                </label>
+              </div>
+
+              <!-- Third Case: Fallback, no manager assigned -->
+              <div v-else>
+                <button
+                  class="bg-red-200 rounded-sm text-xs font-semibold text-red-700 px-1.5 py-0 hover:underline"
+                  @click="assignManager(branch)"
+                >
+                  ASSIGN MANAGER
+                </button>
+              </div>
             </td>
-            <td>
-              <label>{{ service.accessibilityTier }}</label>
-            </td>
+
+            <!-- <td class="text-center">
+              <i
+                :class="
+                  branch.isActive
+                    ? 'text-green-600 fa-solid fa-check'
+                    : 'text-red-600 fa-solid fa-times'
+                "
+              ></i>
+            </td> -->
+
+            <!-- 
             <td class="text-center">
-              <i :class="service.currentVersionId
-            ? 'text-green-600 fa-solid fa-check'
-            : 'text-red-600 fa-solid fa-times'"></i>
-            </td>
+  <span>{{ branch.status }}</span>
+</td> -->
             <td class="text-center">
-              <span>{{ service.status }}</span>
+              <span class="text-xs">{{
+                convertDateTime(branch.createdAt)
+              }}</span>
             </td>
-            <td class="text-center">
-              <span class="text-xs">{{ convertDateTime(service.createdAt.Time) }}</span>
-            </td>
-            <td class="text-center">
-              <i class="fa-solid fa-eye p-1 mx-1 text-blue-600 bg-blue-100 border border-blue-200  hover:text-blue-700"
-                @click="open(service)"></i>
-              <i class="fa-solid fa-pen p-1 mx-1 text-green-600 bg-green-100 border border-green-200 hover:text-green-700"
-                @click="edit(service)"></i>
-              <i class="fa-solid fa-sliders p-1 mx-1 text-primary-700 bg-primary-100 border border-primary-300 hover:text-primary-900"
-                @click="spec(service)"></i>
-            </td>
+            <!-- <td class="text-center">
+              <i
+                class="fa-solid fa-eye p-1 mx-1 text-blue-600 bg-blue-100 border border-blue-200 hover:text-blue-700"
+                @click="open(branch)"
+              ></i>
+              <i
+                class="fa-solid fa-pen p-1 mx-1 text-green-600 bg-green-100 border border-green-200 hover:text-green-700"
+                @click="edit(branch)"
+              ></i>
+              <i
+                class="fa-solid fa-trash p-1 mx-1 text-red-600 bg-red-100 border border-red-200 hover:text-red-700"
+                @click="deleteBranch(branch.id)"
+              ></i>
+            </td> -->
           </tr>
         </tbody>
       </table>
     </div>
     <div class="flex">
       <div class="w-full">
-        <div class="flex" v-if="limit == store.services?.length || page > 1">
-          <button v-if="page > 1" class="pagination-button" @click="previous"> <i
-              class="fa-solid fa-arrow-left"></i></button>
-          <button v-else class="pagination-button-inert"><i class="fa-solid fa-arrow-left"></i></button>
+        <!-- <div class="flex" v-if="limit == branchStore.branches.length || page > 1"> -->
+        <div
+          class="flex"
+          v-if="limit == (branchStore.branches?.length || 0) || page > 1"
+        >
+          <button v-if="page > 1" class="pagination-button" @click="previous">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button v-else class="pagination-button-inert">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
           <div class="w-1/12 text-center my-auto">
-            <label class="rounded text-white bg-primary-700 px-3 py-1">{{ page }}</label>
+            <label class="rounded text-white bg-primary-700 px-3 py-1">{{
+              page
+            }}</label>
           </div>
-          <button v-if="limit == store.services?.length ?? 1 - 1" class="pagination-button" @click="next"><i
-              class="fa-solid fa-arrow-right"></i></button>
-          <button v-else class="pagination-button-inert"><i class="fa-solid fa-arrow-right"></i></button>
+          <button
+            v-if="limit == branchStore.branches.length ?? 1 - 1"
+            class="pagination-button"
+            @click="next"
+          >
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          <button v-else class="pagination-button-inert">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </div>
       </div>
     </div>
@@ -225,20 +370,7 @@ watch(
   <AppModal v-model="modalOpen" xl2>
     <!-- Put here whatever makes you smile -->
     <!-- Chances are high that you're starting with a form -->
-    <CreateBranch @cancel="close" />
-    <!-- That's also okay -->
-  </AppModal>
-
-  <AppModal v-model="categoryModalOpen" xl2>
-    <!-- Put here whatever makes you smile -->
-    <!-- Chances are high that you're starting with a form -->
-    <CategorySelector :service-id="selectedService" @cancel="close" />
-    <!-- That's also okay -->
-  </AppModal>
-
-  <AppModal v-model="specModalOpen" xl6>
-    <!-- Put here whatever makes you smile -->
-    <ServiceSpecificationDetails :id="selectedService" />
+    <CreateBranch @branchCreated="close" @cancel="close" />
     <!-- That's also okay -->
   </AppModal>
 
@@ -248,6 +380,14 @@ watch(
     <!-- That's also okay -->
   </AppModal>
   <!-- /Modal -->
+
+  <!-- Assign Manager Modal -->
+  <AppModal v-model="assignManagerModalOpen" xl2>
+    <!-- Put here whatever makes you smile -->
+    <!-- Chances are high that you're starting with a form -->
+    <AssignBranchManager :branchId="selectedBranch" @managerAssigned="close" @cancel="close" />
+    <!-- That's also okay -->
+  </AppModal>
 </template>
 
 <style scoped>

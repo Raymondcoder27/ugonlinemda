@@ -2,6 +2,7 @@
 import { ref, type Ref } from "vue";
 import BackofficeAccounts from "@/domain/accounts/BackofficeAccounts.vue";
 import UserAccounts from "@/domain/accounts/UserAccounts.vue";
+import BranchManagers from "@/domain/accounts/BranchManagers.vue";
 
 const activeTab: Ref<string> = ref("backoffice")
 
@@ -22,13 +23,16 @@ function select(tab: string) {
     <div class="flex pt-5">
       <div :class="(activeTab == 'backoffice') ? 'w-1/12 tab-active' : 'w-1/12 tab'" @click="select('backoffice')">
         Backoffice</div>
-      <div :class="(activeTab == 'users') ? 'w-2/12 tab-active' : 'w-2/12 tab'" @click="select('users')">Public Users
-      </div>
+        <div :class="(activeTab == 'branchmanagers') ? 'w-2/12 tab-active' : 'w-2/12 tab'" @click="select('branchmanagers')">
+          Branch Managers</div>
+      <!-- <div :class="(activeTab == 'users') ? 'w-2/12 tab-active' : 'w-2/12 tab'" @click="select('users')">Public Users
+      </div> -->
     </div>
     <div class="flex flex-grow">
       <div class="w-full">
         <BackofficeAccounts v-if="activeTab == 'backoffice'" />
-        <UserAccounts v-if="activeTab == 'users'" />
+        <BranchManagers v-if="activeTab == 'branchmanagers'" />
+        <!-- <UserAccounts v-if="activeTab == 'users'" /> -->
       </div>
     </div>
   </div>
