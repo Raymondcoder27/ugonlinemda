@@ -25,6 +25,8 @@ const selectedApplication: Ref<ClientApplication | undefined> = ref()
 const notify = useNotificationsStore()
 
 onMounted(() => {
+  loading.value = true
+  store.fetchServiceRequests()
   fetch()
   providerStore.fetchProviders(1, 20)
     .then(() => (loading.value = false))
