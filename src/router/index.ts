@@ -20,8 +20,9 @@ import AppAgents from "../domain/agents/AppAgents.vue";
 import AppGateway from "../domain/gateway/AppGateway.vue";
 // import AppFinances from "../domain/finances/AppFinances.vue";
 import Billing from "../domain/billing/Billing.vue";
-import ServicesDetails from "../domain/servicesdetails/ServicesDetails.vue";
+import ServicesRequests from "../domain/servicesrequests/ServicesRequests.vue";
 import Branches from "../domain/branches/AppBranches.vue";
+
 
 declare module "vue-router" {
   interface RouteMeta {
@@ -85,7 +86,7 @@ const appRoutes: RouteRecordRaw[] = [
       {
         name: "app-service-requests",
         path: "/agent-admin/service-requests",
-        component: ServicesDetails
+        component: ServiceRequests
       },
       {
         name: "app-billing",
