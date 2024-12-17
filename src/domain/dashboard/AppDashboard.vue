@@ -97,21 +97,20 @@ onMounted(async () => {
       </div>
     </div>
 
-    <div class="w-full">
+    <!-- <div class="w-full">
       <div class="w-12/12 count">
-        <!-- <p class="text-xl font-bold py-2">4</p> -->
         <p class="text-xl font-bold py-2" style="font-size: 30px;">{{ totalBranches }}</p>
 
         <p class="text-xs">Branches</p>
       </div>
-    </div>
+    </div> -->
 
     <div class="w-full">
       <div class="w-12/12 count">
-        <!-- <p class="text-xl font-bold py-2">3</p> -->
+        <p class="text-xl font-bold py-2">Services</p>
         <!-- <p class="text-xl font-bold py-2">{{ accountStore.branchManagers.length }}</p> -->
-        <p class="text-xl font-bold py-2" style="font-size: 30px;">{{ totalBranchManagers }}</p>
-        <p class="text-xs">Branch Managers</p>
+        <!-- <p class="text-xl font-bold py-2" style="font-size: 30px;">{{ totalBranchManagers }}</p> -->
+        <p class="text-xs">18</p>
       </div>
     </div>
 
@@ -125,9 +124,9 @@ onMounted(async () => {
 
     <div class="w-full">
       <div class="w-12/12 count">
-        <p class="text-xl font-bold py-2" style="font-size: 30px;">17</p>
+        <p class="text-xl font-bold py-2" style="font-size: 30px;">17,347</p>
         <!-- <p class="text-xl font-bold py-2">{{ store.tills }}</p> -->
-        <p class="text-xs">Tills</p>
+        <p class="text-xs">Total Users</p>
       </div>
     </div>
 
@@ -138,14 +137,14 @@ onMounted(async () => {
       </div>
     </div> -->
 
-    <div class="w-full">
+    <!-- <div class="w-full">
       <div class="w-12/12 count">
-        <!-- <p class="text-xl font-bold py-2">4</p> -->
-        <!-- <p class="text-xl font-bold py-2">{{ billingStore.floatRequests.length }}</p> -->
+        <p class="text-xl font-bold py-2">4</p>
+        <p class="text-xl font-bold py-2">{{ billingStore.floatRequests.length }}</p>
         <p class="text-xl font-bold py-2" style="font-size: 30px;">{{ pendingFloatRequests }}</p>
         <p class="text-xs">Pending Float Requests</p>
       </div>
-    </div>
+    </div> -->
 
     <div class="w-full">
       <div class="w-12/12 count">
