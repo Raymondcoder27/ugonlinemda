@@ -21,26 +21,21 @@ const route = useRoute();
 const router = useRouter();
 const accountStore = useAccountStore()
 const sideMenu: SideMenuLink[] = [
-  {
-    name: "app-dashboard",
-    label: "Dashboard",
-    iconClass: "fa-solid fa-gauge",
-  },
   // {
   //   name: "app-entities",
   //   label: "Entities",
   //   iconClass: "fa-solid fa-landmark",
   // },
-  {
-    name: "app-branches",
-    label: "Branches",
-    iconClass: "fa-solid fa-code-branch",
-  },
   // {
-  //   name: "app-agents",
-  //   label: "Agents",
-  //   iconClass: "fa-solid fa-people-group",
+  //   name: "app-branches",
+  //   label: "Branches",
+  //   iconClass: "fa-solid fa-code-branch",
   // },
+  {
+    name: "app-agents",
+    label: "Services",
+    iconClass: "fa-solid fa-people-group",
+  },
   {
     name: "app-services",
     label: "Service Subscriptions",
@@ -76,6 +71,11 @@ const sideMenu: SideMenuLink[] = [
   //   label: "Gateway",
   //   iconClass: "fa-solid fa-server",
   // },
+  {
+    name: "app-dashboard",
+    label: "Dashboard",
+    iconClass: "fa-solid fa-gauge",
+  },
 
 ]
 const navigate: (link: SideMenuLink) => void = (link: SideMenuLink) => {
