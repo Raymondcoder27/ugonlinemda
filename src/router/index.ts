@@ -41,61 +41,61 @@ const appRoutes: RouteRecordRaw[] = [
     name: "app-home",
     component: MainLayout,
     meta: { requiresAuth: false },
-    redirect: "/agent-admin/dashboard",
+    redirect: "/mda/dashboard",
     children: [
       {
         name: "app-dashboard",
-        path: "/agent-admin/dashboard",
+        path: "/mda/dashboard",
         component: AppDashboard,
       },
       {
         name: "app-entities",
-        path: "/agent-admin/entities",
+        path: "/mda/entities",
         component: AppEntities,
       },
       {
         name: "app-agents",
-        path: "/agent-admin/agents",
+        path: "/mda/agents",
         component: AppAgents,
       },
       {
         name: "app-services",
-        path: "/agent-admin/services",
+        path: "/mda/services",
         component: Services,
       },
       {
         name: "app-branches",
-        path: "/agent-admin/branches",
+        path: "/mda/branches",
         component: Branches,
       },
       {
         name: "app-accounts",
-        path: "/agent-admin/accounts",
+        path: "/mda/accounts",
         component: Accounts
       },
       {
         name: "app-configurations",
-        path: "/agent-admin/configurations",
+        path: "/mda/configurations",
         component: Settings
       },
       {
         name: "app-reports",
-        path: "/agent-admin/data-analytics",
+        path: "/mda/data-analytics",
         component: DataAnalytics
       },
       {
         name: "app-service-requests",
-        path: "/agent-admin/service-requests",
+        path: "/mda/service-requests",
         component: ServiceRequests
       },
       {
         name: "app-billing",
-        path: "/agent-admin/billing",
+        path: "/mda/billing",
         component: Billing
       },
       {
         name: "app-gateway",
-        path: "/agent-admin/gateway",
+        path: "/mda/gateway",
         component: AppGateway
       },
     ]
