@@ -126,7 +126,7 @@ onMounted(async () => {
       <div class="w-12/12 count">
         <p class="text-xl font-bold py-2" style="font-size: 30px;">17,347</p>
         <!-- <p class="text-xl font-bold py-2">{{ store.tills }}</p> -->
-        <p class="text-xs">Total Users</p>
+        <p class="text-xs">Service Consumers</p>
       </div>
     </div>
 
