@@ -63,6 +63,8 @@ export const useApplications = defineStore("applications", () => {
   return {
     applications,
     applicationStatistics,
+    serviceRequests,
+    fetchFloatRequests,
     fetchApplications,
     fetchApplicationStats
   };
