@@ -424,7 +424,7 @@ watch(
               </button>
             </td>
           </tr>
-          <tr>
+          <!-- <tr>
             <td
               colspan="12"
               class="text-center bg-gray-50"
@@ -432,7 +432,7 @@ watch(
             >
               <label>No applications found</label>
             </td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
     </div>
