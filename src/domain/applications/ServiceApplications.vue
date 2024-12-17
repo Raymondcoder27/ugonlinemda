@@ -356,14 +356,14 @@ watch(
     <div class="flex my-1">
       <table class="table">
         <thead>
-          <tr class="header-tr">
+          <tr class="">
             <th class="">#</th>
-            <th class="t-left">Tracking No.</th>
-            <th class="t-left">Service</th>
+            <th class="text-left">Tracking No.</th>
+            <th class="text-left">Service</th>
             <!-- <th class="t-header">Provider</th> -->
-            <th class="t-left">Applicant</th>
-            <th class="text-center">Status</th>
-            <th class="text-center">Date</th>
+            <th class="text-left">Applicant</th>
+            <th class="text-left">Status</th>
+            <th class="text-left">Date</th>
             <th class="t-header">Actions</th>
           </tr>
         </thead>
