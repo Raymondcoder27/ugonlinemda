@@ -104,14 +104,13 @@ onMounted(() => {
             <option value="Branch 2">Branch 2</option>
             <option value="Branch 3">Branch 3</option>
           </select>
-          <select v-if="filter.filter !== undefined" input-type="text" v-model="filter.filter[2].operand"
+          <!-- <select v-if="filter.filter !== undefined" input-type="text" v-model="filter.filter[2].operand"
             class="filter-element e-input" type="text" placeholder="Drop down provider">
             <option value="" disabled selected>--Filter by Amount--</option>
             <option value="NIRA"> &lt 10,000,000 </option>
             <option value="URSB"> &lt 10,000,000 >= </option>
-            <!-- <option value="UMEME">UMEME</option> -->
             <option value="NARO"> > 10,000,000 </option>
-          </select>
+          </select> -->
           <select v-if="filter.filter !== undefined" input-type="text" v-model="filter.filter[1].operand"
             class="filter-element e-input" type="text" placeholder="Filter by Status">
             <option value="" disabled selected>--Filter by Status--</option>
