@@ -273,7 +273,7 @@ watch(
             <!--            <th class="t-header">#</th>-->
             <th class="t-header">Tracking No.</th>
             <th class="t-header" width="400px">Service</th>
-            <th class="t-header">Provider</th>
+            <!-- <th class="t-header">Provider</th> -->
             <th class="t-header">Applicant</th>
             <th class="text-center">Status</th>
             <th class="text-center">Date</th>
@@ -298,7 +298,7 @@ watch(
             <td>
               <label class="font-bold">{{ application.serviceName }}</label>
             </td>
-            <td>{{ application.providerName }}</td>
+            <!-- <td>{{ application.providerName }}</td> -->
             <td>
               <label class="text-primary-700 underline">@{{ application.username }}</label>
             </td>
