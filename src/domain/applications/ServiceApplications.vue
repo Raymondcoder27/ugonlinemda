@@ -398,7 +398,7 @@ watch(
               <!-- <label class="text-primary-700 underline">@{{ application.username }}</label> -->
               <label class="">{{ application.applicant }}</label>
             </td>
-            <td>
+            <!-- <td>
               <div :class="statusStyling(application.status)">
                 <div class="w-4/12 text-center">
                   <i :class="statusIcon(application.status)"></i>
@@ -412,6 +412,11 @@ watch(
                   </label>
                 </div>
               </div>
+            </td> -->
+            <td>
+              <span>
+                {{ application.status }}
+              </span>
             </td>
             <td class="text-left">
               {{ convertDateTime(application.createdAt) }}
