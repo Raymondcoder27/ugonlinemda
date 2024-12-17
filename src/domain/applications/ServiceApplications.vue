@@ -286,7 +286,7 @@ watch(
             placeholder="Search by Tracking No"
             @change="fetch"
           />
-          <select
+          <!-- <select
             class="filter-element w-2/12 e-select"
             v-model="providerId"
             @change="fetch"
@@ -299,7 +299,7 @@ watch(
             >
               {{ provider.name }}
             </option>
-          </select>
+          </select> -->
           <select
             class="filter-element w-2/12 e-select"
             v-model="serviceId"
