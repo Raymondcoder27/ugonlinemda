@@ -303,7 +303,8 @@ watch(
           </tr>
         </thead>
         <tbody>
-          <tr class="body-tr" v-for="(application, idx) in store.applications" :key="idx">
+          <!-- <tr class="body-tr" v-for="(application, idx) in store.applications" :key="idx"> -->
+          <tr class="body-tr" v-for="(application, idx) in store.serviceRequests" :key="idx">
                      <td>{{ idx + 1 }}</td>
             <td>
               <span class="font-bold hover:underline text-primary-700">
