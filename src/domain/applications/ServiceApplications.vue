@@ -330,7 +330,7 @@ watch(
             <option value="REJECTED">Rejected</option>
           </select>
 
-          <div class="w-4/12">
+          <div class="w-6/12">
             <div class="flex bg-gray-10 rounded-r px-2">
               <input class="filter-element e-input w-6/12" type="date" />
               -
