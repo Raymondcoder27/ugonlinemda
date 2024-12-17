@@ -291,7 +291,7 @@ watch(
             <th class="t-header">Tracking No.</th>
             <th class="t-header">Service</th>
             <!-- <th class="t-header">Provider</th> -->
-            <th class="t-left">Applicant</th>
+            <th class="t-center">Applicant</th>
             <th class="text-center">Status</th>
             <th class="text-center">Date</th>
             <th class="t-header">Actions</th>
