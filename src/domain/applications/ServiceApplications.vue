@@ -318,7 +318,8 @@ watch(
             </td>
             <!-- <td>{{ application.providerName }}</td> -->
             <td>
-              <label class="text-primary-700 underline">@{{ application.username }}</label>
+              <!-- <label class="text-primary-700 underline">@{{ application.username }}</label> -->
+              <label class="text-primary-700 underline">@{{ application.applicant}}</label>
             </td>
             <td>
               <div :class="statusStyling(application.status)">
