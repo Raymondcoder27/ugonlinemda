@@ -39,7 +39,7 @@ const sideMenu: SideMenuLink[] = [
   {
     name: "app-agents",
     label: "Services",
-    iconClass: "fa-solid fa-file-alt",
+    iconClass: "fa-solid fa-clipboard-list",
   },
   // {
   //   name: "app-services",
@@ -54,7 +54,7 @@ const sideMenu: SideMenuLink[] = [
   {
     name: "app-service-requests",
     label: "Service Requests",
-    iconClass: "fa-solid fa-list"
+    iconClass: "fa-solid fa-file-circle-check"
   },
   {
     name: "app-reports",
