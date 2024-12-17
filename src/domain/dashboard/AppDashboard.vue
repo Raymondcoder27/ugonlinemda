@@ -118,7 +118,7 @@ onMounted(async () => {
       <div class="w-12/12 count">
         <!-- <p class="text-xl font-bold py-2">17</p> -->
         <p class="text-xl font-bold py-2" style="font-size: 30px;">{{ totalBackOfficeAccounts }}</p>
-        <p class="text-xs">BackOffice Accounts</p>
+        <p class="text-xs">Accounts</p>
       </div>
     </div>
 
