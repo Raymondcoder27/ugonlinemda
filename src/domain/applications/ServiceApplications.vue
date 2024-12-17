@@ -206,7 +206,8 @@ watch(
         <i
           class="bg-primary-700 border border-primary-800 text-white p-2 rounded-full fa-solid fa-file-circle-check"
         ></i>
-        <label class="text-lg mx-1">Service Applications (Requests)</label>
+        <!-- <label class="text-lg mx-1">Service Applications (Requests)</label> -->
+        <label class="text-lg mx-1">Service Requests</label>
       </div>
     </div>
     <div class="flex my-4" v-if="store.applicationStatistics">
