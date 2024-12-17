@@ -110,7 +110,7 @@ onMounted(async () => {
         <p class="text-xl font-bold py-2">18</p>
         <!-- <p class="text-xl font-bold py-2">{{ accountStore.branchManagers.length }}</p> -->
         <!-- <p class="text-xl font-bold py-2" style="font-size: 30px;">{{ totalBranchManagers }}</p> -->
-        <p class="text-xs">Services</p>
+        <p class="text-xs">Services Listed</p>
       </div>
     </div>
 
