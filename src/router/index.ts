@@ -83,8 +83,8 @@ const appRoutes: RouteRecordRaw[] = [
         component: DataAnalytics
       },
       {
-        name: "app-services-details",
-        path: "/agent-admin/services-details",
+        name: "app-service-requests",
+        path: "/agent-admin/service-requests",
         component: ServicesDetails
       },
       {
