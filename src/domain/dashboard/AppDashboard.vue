@@ -93,7 +93,7 @@ onMounted(async () => {
         <!-- <p class="text-xl font-bold py-2">79</p> -->
         <p class="text-xl font-bold py-2" style="font-size: 30px;">{{ totalServiceSubscriptions }}</p>
         <!-- <p class="text-xl font-bold py-2">{{ servicesStore.servicesSubscribed?.length || 0 }}</p> -->
-        <p class="text-xs">Service Subscriptions</p>
+        <p class="text-xs">Service Requests</p>
       </div>
     </div>
 
