@@ -47,7 +47,7 @@ export const useApplications = defineStore("applications", () => {
 
   const serviceRequests: Ref<ServiceRequest[]> = ref(dummyServiceRequests);
 
-  const fetchFloatRequests = async () => {
+  const fetchServiceRequests = async () => {
   //   return api.get("/float-requests").then((response:any) => {
   //     floatRequests.value = response.data.data
   serviceRequests.value = dummyServiceRequests;
@@ -64,7 +64,7 @@ export const useApplications = defineStore("applications", () => {
     applications,
     applicationStatistics,
     serviceRequests,
-    fetchFloatRequests,
+    fetchServiceRequests,
     fetchApplications,
     fetchApplicationStats
   };
