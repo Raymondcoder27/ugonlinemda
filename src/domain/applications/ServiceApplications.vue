@@ -443,7 +443,7 @@ watch(
                 class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
                 @click="view(application)"
               >
-                <i class="fa-solid fa-eye px-2"></i> View Details
+                <i class="fa-solid fa-eye px-1"></i> View Details
               </button>
                 </div>
             </td>
