@@ -229,18 +229,18 @@ watch(
         <p class="text-sm">Total</p>
       </div>
     </div>
-    <div class="flex my-1 pt-1 pb-3">
-      <div class="w-12/12">
-        <div class="flex bg-gray-10 border border-gray-200 rounded-l px-2 py-3">
-          <input class="filter-element e-input w-3/12" type="text" v-model="trackingNumber"
+    <div class="flex my-1 pt-1 pb-3 px-3">
+      <div class="w-12/12 px-2">
+        <div class="flex bg-gray-10 border border-gray-200 rounded-l py-3 px-1">
+          <input class="filter-element e-input w-2/12" type="text" v-model="trackingNumber"
             placeholder="Search by Tracking No" @change="fetch" />
-          <select class="filter-element w-3/12 e-select" v-model="providerId" @change="fetch">
+          <select class="filter-element w-2/12 e-select" v-model="providerId" @change="fetch">
             <option value="">- Select Provider -</option>
             <option v-for="(provider, idx) in providerStore.providers" :key="idx" :value="provider.id">{{ provider.name
               }}
             </option>
           </select>
-          <select class="filter-element w-3/12 e-select" v-model="serviceId" @change="fetch">
+          <select class="filter-element w-2/12 e-select" v-model="serviceId" @change="fetch">
             <option value="">- Select Service -</option>
             <option v-for="(service, idx) in serviceStore.services" :key="idx" :value="service.id">{{ service.name }}
             </option>
@@ -257,8 +257,8 @@ watch(
             <option value="REJECTED">Rejected</option>
           </select>
 
-          <div class="w-3/12">
-        <div class="flex bg-gray-10 rounded-r px-2 py-3">
+          <div class="w-4/12">
+        <div class="flex bg-gray-10 rounded-r px-2">
           <input class="filter-element e-input w-6/12" type="date" />
           -
           <input class="filter-element e-input w-6/12" type="date" />
