@@ -270,7 +270,7 @@ watch(
       <table class="table">
         <thead>
           <tr class="header-tr">
-            <!--            <th class="t-header">#</th>-->
+                       <th class="t-header">#</th>
             <th class="t-header">Tracking No.</th>
             <th class="t-header">Service</th>
             <!-- <th class="t-header">Provider</th> -->
@@ -289,7 +289,7 @@ watch(
         </thead>
         <tbody>
           <tr class="body-tr" v-for="(application, idx) in store.applications" :key="idx">
-            <!--          <td>{{ idx + 1 }}.</td>-->
+                     <td>{{ idx + 1 }}</td>
             <td>
               <span class="font-bold hover:underline text-primary-700">
                 {{ application.trackingNo }}
