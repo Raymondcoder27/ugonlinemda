@@ -418,7 +418,7 @@ watch(
                 <span
                   class="text-xs cursor-pointer rounded-md px-1 py-0.5 font-semibold text-gray-600 bg-gray-100 border border-gray-200 hover:text-gray-700 hover:bg-gray-200"
                   @click="view(application)"
-                  >PENDING</span
+                  >Pending</span
                 >
 
               </div>
@@ -427,7 +427,7 @@ watch(
                   <span
                     class="text-xs cursor-pointer rounded-md px-1 py-0.5 font-semibold text-red-600 bg-red-100 border border-red-200 hover:text-red-700 hover:bg-red-200"
                     @click="view(application)"
-                    >REJECTED</span
+                    >Rejected</span
                   >
                 </label>
               </div>
@@ -436,7 +436,7 @@ watch(
                   <span
                     class="text-xs cursor-pointer rounded-md px-1 py-0.5 font-semibold text-green-600 bg-green-100 border border-green-200 hover:text-green-700 hover:bg-green-200"
                     @click="view(application)"
-                    >APPROVED</span
+                    >Approved</span
                   >
                 </label>
               </div>
@@ -449,7 +449,7 @@ watch(
               {{ convertDateTime(application.createdAt) }}
             </td>
             <td>
-              <div v-if="application.status == 'pending'">
+              <div v-if="application.status == 'Pending'">
                 <button
                   class="bg-blue-600 rounded py-1 px-1 text-white hover:bg-blue-700"
                   @click="view(application)"
