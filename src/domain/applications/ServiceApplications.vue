@@ -417,12 +417,35 @@ watch(
               {{ convertDateTime(application.createdAt) }}
             </td>
             <td>
-              <button
+              <div v-if="application.status == 'pending'">
+                <button
+                  class="bg-blue-600 rounded py-1 px-1 text-white hover:bg-blue-700"
+                  @click="view(application)"
+                >
+                  <i class="fa-solid fa-eye px-2"></i> 
+                  Approve
+                </button>
+
+                <button
+                  class="bg-red-600 rounded py-1 px-1 text-white hover:bg-red-700"
+                  @click="view(application)"
+                >
+                  <i class="fa-solid fa-eye px-2"></i> 
+                  Reject
+                </button>
+
+              </div>
+              <!-- <div v-if="">
+
+              </div> -->
+              <div v-else>
+                <button
                 class="bg-primary-600 rounded py-1 px-1 text-white hover:bg-primary-700"
                 @click="view(application)"
               >
                 <i class="fa-solid fa-eye px-2"></i> View Details
               </button>
+                </div>
             </td>
           </tr>
           <!-- <tr>
