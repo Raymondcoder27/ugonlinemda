@@ -1,5 +1,13 @@
 // import {s} from "vitest/dist/types-198fd1d9";
 
+export type ServiceRequest = {
+    id: number
+    requestDate: string
+    service: string
+    status: string
+    applicant: string
+};
+
 
 export type ClientApplication = {
     id: string
