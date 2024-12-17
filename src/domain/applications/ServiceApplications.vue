@@ -422,15 +422,15 @@ watch(
                   class="bg-blue-600 rounded py-1 px-1 text-white hover:bg-blue-700"
                   @click="view(application)"
                 >
-                  <i class="fa-solid fa-eye px-2"></i> 
+                  <i class="fa-solid fa-check px-2"></i> 
                   Approve
                 </button>
 
                 <button
-                  class="bg-red-600 rounded py-1 px-1 text-white hover:bg-red-700"
+                  class="bg-red-600 rounded py-1 px-1 ml-1 text-white hover:bg-red-700"
                   @click="view(application)"
                 >
-                  <i class="fa-solid fa-eye px-2"></i> 
+                  <i class="fa-solid fa-times-square px-2"></i> 
                   Reject
                 </button>
 
