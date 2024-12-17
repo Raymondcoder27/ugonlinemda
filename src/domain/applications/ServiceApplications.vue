@@ -412,7 +412,7 @@ watch(
                 </div>
               </div>
             </td>
-            <td class="text-center">
+            <td class="text-left">
               {{ convertDateTime(application.createdAt) }}
             </td>
             <td>
