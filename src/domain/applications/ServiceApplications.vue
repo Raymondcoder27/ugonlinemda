@@ -230,7 +230,7 @@ watch(
       </div>
     </div>
     <div class="flex my-1 pt-1 pb-3">
-      <div class="w-9/12">
+      <div class="w-12/12">
         <div class="flex bg-gray-10 border border-gray-200 rounded-l px-2 py-3">
           <input class="filter-element e-input w-3/12" type="text" v-model="trackingNumber"
             placeholder="Search by Tracking No" @change="fetch" />
@@ -256,15 +256,30 @@ watch(
             <option value="QUERIED">Queried</option>
             <option value="REJECTED">Rejected</option>
           </select>
-        </div>
-      </div>
-      <div class="w-3/12">
-        <div class="flex bg-gray-100 rounded-r px-2 py-3">
+
+          <div class="w-3/12">
+        <div class="flex bg-gray-10 rounded-r px-2 py-3">
           <input class="filter-element e-input w-6/12" type="date" />
           -
           <input class="filter-element e-input w-6/12" type="date" />
         </div>
       </div>
+        </div>
+        <!-- <div class="w-3/12">
+        <div class="flex bg-gray-10 rounded-r px-2 py-3">
+          <input class="filter-element e-input w-6/12" type="date" />
+          -
+          <input class="filter-element e-input w-6/12" type="date" />
+        </div>
+      </div> -->
+      </div>
+      <!-- <div class="w-3/12">
+        <div class="flex bg-gray-10 rounded-r px-2 py-3">
+          <input class="filter-element e-input w-6/12" type="date" />
+          -
+          <input class="filter-element e-input w-6/12" type="date" />
+        </div>
+      </div> -->
     </div>
     <div class="flex my-1">
       <table class="table">
