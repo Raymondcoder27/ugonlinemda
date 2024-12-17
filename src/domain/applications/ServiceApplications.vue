@@ -440,7 +440,7 @@ watch(
               </div> -->
               <div v-else>
                 <button
-                class="bg-primary-600 rounded py-1 px-1 text-white hover:bg-primary-700"
+                class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
                 @click="view(application)"
               >
                 <i class="fa-solid fa-eye px-2"></i> View Details
