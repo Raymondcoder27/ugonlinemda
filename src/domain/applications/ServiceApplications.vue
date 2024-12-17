@@ -294,7 +294,7 @@ watch(
             <th class="t-left">Applicant</th>
             <th class="text-center">Status</th>
             <th class="text-center">Date</th>
-            <th class="t-header"></th>
+            <th class="t-header">Actions</th>
           </tr>
         </thead>
         <thead v-if="loading">
