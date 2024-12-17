@@ -39,7 +39,7 @@ const sideMenu: SideMenuLink[] = [
   {
     name: "app-agents",
     label: "Services",
-    iconClass: "fa-solid fa-people-group",
+    iconClass: "fa-solid fa-file-alt",
   },
   // {
   //   name: "app-services",
