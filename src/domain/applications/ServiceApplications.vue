@@ -55,7 +55,7 @@ const approveRequest = (id: string) => {
   //   .catch((error: ApiError) => {
   //     notify.error(error.response.data.message);
   //   });
-  applicationStore.approveServiceRequest(id);
+  store.approveServiceRequest(id);
 };
 
 function fetch() {
