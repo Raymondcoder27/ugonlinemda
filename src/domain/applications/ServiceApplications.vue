@@ -592,7 +592,7 @@ watch(
               <td class="p-1 font-bold">Tracking Number</td>
               <td class="p-1">{{ selectedApplication?.trackingNo }}</td>
               <i
-                @click="copyToClipboard(transaction.trackingNumber)"
+                @click="copyToClipboard(selectedApplication.trackingNo)"
                 class="fa-regular ml-4 fa-copy mx-1 hover:text-gray-800"
               ></i>
             </tr>
