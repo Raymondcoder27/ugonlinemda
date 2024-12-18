@@ -440,7 +440,7 @@ watch(
               </span>
               <i
                 @click="copyToClipboard(application.trackingNo)"
-                class="fa-regular ml-1 fa-copy hover:text-gray-800"
+                class="fa-regular ml-1 text-primary fa-copy hover:text-gray-800"
               ></i>
             </td>
             <td>
