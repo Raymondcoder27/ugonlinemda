@@ -68,7 +68,7 @@ export const useApplications = defineStore("applications", () => {
 //   store.approveServiceRequest(id);
 // };
 
-     const approveServiceRequest = (id: string) => {
+     function approveServiceRequest = (id: string) => {
     // store
     console.log("Approving request with id: ", id);
     const request = serviceRequests.value.find((request) => request.id === id);
