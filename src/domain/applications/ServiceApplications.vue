@@ -121,6 +121,25 @@ function fetchProviderServices(id: string, page: number) {
     });
 }
 
+const copyToClipboard = async (trackingNumber: string) => {
+  try {
+    // You can replace this with any string you want to copy
+    // const textToCopy = "Text to copy to clipboard";
+
+    // Using the Clipboard API
+    await navigator.clipboard.writeText(trackingNumber);
+
+    // Show "Copied!" for 2 seconds
+    copied.value = true;
+    setTimeout(() => {
+      copied.value = false;
+    }, 2000);
+    notify.success("Copied to clipboard");
+  } catch (error) {
+    console.error("Failed to copy text: ", error);
+  }
+};
+
 function statusStyling(status?: string) {
   if (status == "PENDING") {
     return "flex px-2 py-1 rounded bg-gray-500 text-white";
@@ -570,6 +589,10 @@ watch(
             <tr class="border border-gray-50">
               <td class="p-1 font-bold">Tracking Number</td>
               <td class="p-1">{{ selectedApplication?.trackingNo }}</td>
+              <i
+                @click="copyToClipboard(transaction.trackingNumber)"
+                class="fa-regular ml-4 fa-copy mx-1 hover:text-gray-800"
+              ></i>
             </tr>
             <tr class="border border-gray-50">
               <td class="p-1 font-bold">Status</td>
