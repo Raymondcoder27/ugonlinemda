@@ -97,6 +97,7 @@ export const useApplications = defineStore("applications", () => {
     applications,
     applicationStatistics,
     serviceRequests,
+    rejectServiceRequest,
     approveServiceRequest,
     fetchServiceRequests,
     fetchApplications,
