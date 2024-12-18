@@ -44,6 +44,20 @@ onMounted(() => {
     });
 });
 
+// approve request
+const approveRequest = (id: string) => {
+  // store
+  //   .approveServiceRequest(id)
+  //   .then(() => {
+  //     notify.success("Request approved successfully");
+  //     fetch();
+  //   })
+  //   .catch((error: ApiError) => {
+  //     notify.error(error.response.data.message);
+  //   });
+  applicationStore.approveServiceRequest(id);
+};
+
 function fetch() {
   loading.value = true;
   store
