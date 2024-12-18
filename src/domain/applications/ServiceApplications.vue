@@ -121,6 +121,8 @@ function fetchProviderServices(id: string, page: number) {
     });
 }
 
+const copied = ref(false);
+
 const copyToClipboard = async (trackingNumber: string) => {
   try {
     // You can replace this with any string you want to copy
