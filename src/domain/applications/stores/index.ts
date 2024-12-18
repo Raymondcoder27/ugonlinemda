@@ -77,6 +77,15 @@ export const useApplications = defineStore("applications", () => {
     }
   }
 
+  function rejectServiceRequest(id: string) {
+    // store
+    console.log("Rejecting request with id: ", id);
+    const request = serviceRequests.value.find((request) => request.id === id);
+    if (request) {
+      request.status = "Rejected";
+    }
+  }
+
 
   const fetchApplicationStats = async (status:boolean) => {
     return api.get("/registry/v1/applications/stats?status="+status).then((response:any) => {

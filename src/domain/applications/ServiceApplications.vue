@@ -58,6 +58,20 @@ const approveRequest = (id: string) => {
   store.approveServiceRequest(id);
 };
 
+// reject request
+const rejectRequest = (id: string) => {
+  // store
+  //   .rejectServiceRequest(id)
+  //   .then(() => {
+  //     notify.success("Request rejected successfully");
+  //     fetch();
+  //   })
+  //   .catch((error: ApiError) => {
+  //     notify.error(error.response.data.message);
+  //   });
+  store.rejectServiceRequest(id);
+};
+
 function fetch() {
   loading.value = true;
   store
