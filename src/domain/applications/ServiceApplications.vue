@@ -452,7 +452,7 @@ watch(
               <div v-if="application.status == 'Pending'">
                 <button
                   class="bg-blue-600 rounded py-1 px-1 text-white hover:bg-blue-700"
-                  @click="view(application)"
+                  @click="approveFloatRequest(request.id)"
                 >
                   <i class="fa-solid fa-check px-1"></i> 
                   Approve
@@ -460,7 +460,7 @@ watch(
 
                 <button
                   class="bg-red-600 rounded py-1 px-1 ml-1 text-white hover:bg-red-700"
-                  @click="view(application)"
+                  @click="approveFloatRequest(request.id)"
                 >
                   <i class="fa-solid fa-times-square px-1"></i> 
                   Reject
