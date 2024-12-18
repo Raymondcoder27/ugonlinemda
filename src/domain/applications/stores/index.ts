@@ -54,6 +54,30 @@ export const useApplications = defineStore("applications", () => {
   }
 
 
+  // approve request
+// const approveRequest = (id: string) => {
+//   // store
+//   //   .approveServiceRequest(id)
+//   //   .then(() => {
+//   //     notify.success("Request approved successfully");
+//   //     fetch();
+//   //   })
+//   //   .catch((error: ApiError) => {
+//   //     notify.error(error.response.data.message);
+//   //   });
+//   store.approveServiceRequest(id);
+// };
+
+     const approveServiceRequest = (id: string) => {
+    // store
+    console.log("Approving request with id: ", id);
+    const request = serviceRequests.value.find((request) => request.id === id);
+    if (request) {
+      request.status = "Approved";
+    }
+  }
+
+
   const fetchApplicationStats = async (status:boolean) => {
     return api.get("/registry/v1/applications/stats?status="+status).then((response:any) => {
       applicationStatistics.value = response.data.data
@@ -64,6 +88,7 @@ export const useApplications = defineStore("applications", () => {
     applications,
     applicationStatistics,
     serviceRequests,
+    approveServiceRequest,
     fetchServiceRequests,
     fetchApplications,
     fetchApplicationStats
