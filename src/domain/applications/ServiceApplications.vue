@@ -438,6 +438,10 @@ watch(
               <span class="font-bold hover:underline text-primary-700">
                 {{ application.trackingNo }}
               </span>
+              <i
+                @click="copyToClipboard(application.trackingNo)"
+                class="fa-regular ml-1 fa-copy hover:text-gray-800"
+              ></i>
             </td>
             <td>
               <label class="font-bold">{{ application.serviceName }}</label>
