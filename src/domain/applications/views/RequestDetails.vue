@@ -18,7 +18,7 @@
         <div class="space-y-2">
           <div>
             <span class="block font-medium text-gray-600">Tracking Number:</span>
-            <span class="block text-red-700 font-semibold hover:underline">123456</span>
+            <span class="block text-red-700 font-semibold hover:underline cursor-pointer">123456</span>
           </div>
           <div>
             <span class="block font-medium text-gray-600">Service:</span>
