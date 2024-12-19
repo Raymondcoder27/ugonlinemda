@@ -2,10 +2,10 @@
 </script>
 
 <template>
-  <div class="flex p-2 bg-white">
-    <div class="w-full text-xs cursor-pointer py-2 bg-gray-50 rounded-md">
+  <div class="flex py-2 bg-white">
+    <div class="w-full text-xs cursor-pointer bg-gray-10 rounded-md">
       <!-- place a tab showing Service Requests / Request Details with those two being router links -->
-      <router-link to="/applications/requests" class="">Service Requests</router-link> /
+      <router-link to="/applications/requests" class="ml-5">Service Requests</router-link> /
       Request Details
 
       <!-- place a card showing the details of the request, (tracking number, service, service description, applicant name, details used (eg national id) status, date) -->
