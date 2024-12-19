@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="flex bg-gray-50 min-h-screen">
+  <div class="flex bg-gray-50 min-h-screen overflow-x-hidden overflow-y-auto">
     <div class="w-full max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
       <!-- Breadcrumb -->
       <div class="text-sm mb-4">
