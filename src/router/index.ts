@@ -22,6 +22,8 @@ import AppGateway from "../domain/gateway/AppGateway.vue";
 import Billing from "../domain/billing/Billing.vue";
 import ServicesRequests from "../domain/servicesrequests/ServicesRequests.vue";
 import Branches from "../domain/branches/AppBranches.vue";
+import ServiceRequestDetails from "../domain/applications/views/RequestDetails.vue";
+
 
 
 declare module "vue-router" {
@@ -62,6 +64,11 @@ const appRoutes: RouteRecordRaw[] = [
         name: "app-services",
         path: "/mda/services",
         component: Services,
+      },
+      {
+        name: "app-service-request-details",
+        path: "/mda/service-request-details",
+        component: ServiceRequestDetails,
       },
       {
         name: "app-branches",

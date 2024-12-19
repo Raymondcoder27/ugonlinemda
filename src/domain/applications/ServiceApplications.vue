@@ -522,6 +522,7 @@ watch(
                   <i class="fa-solid fa-times-square px-1"></i> 
                   Reject
                 </button> -->
+                <!-- router-link to="/applications/requests" -->
                 <button
                   class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
                   @click="viewRequestDetails(application.id)"
