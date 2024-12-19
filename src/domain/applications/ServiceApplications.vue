@@ -524,7 +524,7 @@ watch(
                 </button> -->
                 <router-link to="/mda/service-request-details" class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700">
                   <i class="fa-solid fa-eye px-1"></i>
-                  ViewRequestDetails</router-link>
+                  View Request Details</router-link>
                 <!-- <button
                   class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
                   @click="viewRequestDetails(application.id)"
