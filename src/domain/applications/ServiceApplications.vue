@@ -526,7 +526,7 @@ watch(
                   class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
                   @click="viewRequest(application.id)"
                 >
-                  <i class="fa-solid fa-times-square px-1"></i> 
+                  <i class="fa-solid fa-eye px-1"></i> 
                   View Request Details
                 </button>
 
