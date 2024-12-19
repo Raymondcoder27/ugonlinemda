@@ -50,7 +50,7 @@
       <!-- Action Buttons -->
       <div class="flex justify-center space-x-4 mt-6">
         <button class="px-4 py-1 bg-amber-600 text-white rounded-md hover:bg-amber-500 transition">
-          <i class="fa fa-check"></i>
+          <i class="fa fa-exclamation-circle"></i>
           Query
         </button>
         <button class="px-4 py-1 bg-red-700 text-white rounded-md hover:bg-red-600 transition">
