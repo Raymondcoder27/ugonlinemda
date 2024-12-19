@@ -4,10 +4,11 @@
 <template>
   <div class="flex py-2 bg-white">
     <div class="w-full text-xs cursor-pointer bg-gray-10 rounded-md">
-      <!-- place a tab showing Service Requests / Request Details with those two being router links -->
-      <router-link to="/applications/requests" class="ml-5">Service Requests</router-link> /
-      Request Details
-
+      <div>
+        <router-link to="/applications/requests" class="ml-5">Service Requests</router-link> /
+        Request Details
+      </div>
+     
       <!-- place a card showing the details of the request, (tracking number, service, service description, applicant name, details used (eg national id) status, date) -->
       <div class="bg-white shadow-md rounded my-6">
         <table class="text-left w-full border-collapse">
