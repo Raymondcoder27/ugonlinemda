@@ -49,7 +49,7 @@
 
       <!-- Action Buttons -->
       <div class="flex justify-center space-x-4 mt-6">
-        <button class="px-4 py-1 bg-amber-700 text-white rounded-md hover:bg-amber-600 transition">
+        <button class="px-4 py-1 bg-amber-600 text-white rounded-md hover:bg-amber-500 transition">
           <i class="fa fa-check"></i>
           Query
         </button>
