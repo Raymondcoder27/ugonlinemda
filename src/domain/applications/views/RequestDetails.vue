@@ -2,8 +2,8 @@
 </script>
 
 <template>
-  <div class="flex py-4 bg-gray-50 min-h-screen">
-    <div class="w-full max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-md">
+  <div class="flex bg-gray-50 min-h-screen">
+    <div class="w-full max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
       <!-- Breadcrumb -->
       <div class="text-sm mb-4">
         <router-link to="/mda/service-requests" class="text-gray-500 hover:text-gray-700">Service Requests</router-link>
@@ -48,11 +48,13 @@
       </div>
 
       <!-- Action Buttons -->
-      <div class="flex justify-end space-x-4 mt-6">
-        <button class="px-6 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition">
+      <div class="flex justify-center space-x-4 mt-6">
+        <button class="px-6 py-1 bg-red-700 text-white rounded-md hover:bg-red-600 transition">
+          <i class="fa fa-times-square"></i>
           Reject
         </button>
-        <button class="px-6 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition">
+        <button class="px-6 py-1 bg-green-700 text-white rounded-md hover:bg-green-600 transition">
+          <i class="fa fa-check"></i>
           Approve
         </button>
       </div>
