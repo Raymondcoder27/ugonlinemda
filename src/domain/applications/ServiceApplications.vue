@@ -59,17 +59,21 @@ const approveRequest = (id: string) => {
 };
 
 // reject request
-const rejectRequest = (id: string) => {
-  // store
-  //   .rejectServiceRequest(id)
-  //   .then(() => {
-  //     notify.success("Request rejected successfully");
-  //     fetch();
-  //   })
-  //   .catch((error: ApiError) => {
-  //     notify.error(error.response.data.message);
-  //   });
-  store.rejectServiceRequest(id);
+// const rejectRequest = (id: string) => {
+//   // store
+//   //   .rejectServiceRequest(id)
+//   //   .then(() => {
+//   //     notify.success("Request rejected successfully");
+//   //     fetch();
+//   //   })
+//   //   .catch((error: ApiError) => {
+//   //     notify.error(error.response.data.message);
+//   //   });
+//   store.rejectServiceRequest(id);
+// };
+
+const viewRequest = (id: string) => {
+  store.viewServiceRequest(id);
 };
 
 function fetch() {
@@ -520,7 +524,7 @@ watch(
                 </button> -->
                 <button
                   class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
-                  @click="rejectRequest(application.id)"
+                  @click="viewRequest(application.id)"
                 >
                   <i class="fa-solid fa-times-square px-1"></i> 
                   View Details
