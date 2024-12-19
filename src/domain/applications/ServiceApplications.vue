@@ -527,7 +527,7 @@ watch(
                   @click="viewRequest(application.id)"
                 >
                   <i class="fa-solid fa-times-square px-1"></i> 
-                  View Details
+                  View Request Details
                 </button>
 
               </div>
