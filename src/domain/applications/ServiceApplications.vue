@@ -503,20 +503,27 @@ watch(
             </td>
             <td>
               <div v-if="application.status == 'Pending'">
-                <button
+                <!-- <button
                   class="bg-blue-600 rounded py-1 px-1 text-white hover:bg-blue-700"
                   @click="approveRequest(application.id)"
                 >
                   <i class="fa-solid fa-check px-1"></i> 
                   Approve
-                </button>
+                </button> -->
 
-                <button
+                <!-- <button
                   class="bg-red-600 rounded py-1 px-1 ml-1 text-white hover:bg-red-700"
                   @click="rejectRequest(application.id)"
                 >
                   <i class="fa-solid fa-times-square px-1"></i> 
                   Reject
+                </button> -->
+                <button
+                  class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
+                  @click="rejectRequest(application.id)"
+                >
+                  <i class="fa-solid fa-times-square px-1"></i> 
+                  View Details
                 </button>
 
               </div>
