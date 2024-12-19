@@ -5,7 +5,7 @@
   <div class="flex py-2 bg-white">
     <div class="w-full cursor-pointer bg-gray-10 rounded-md">
       <div class="mt-3 text-sm">
-        <router-link to="/applications/requests" class="">Service Requests</router-link> /
+        <router-link to="/applications/requests" class="text-gray-600">Service Requests</router-link> /
         Request Details
       </div>
      
