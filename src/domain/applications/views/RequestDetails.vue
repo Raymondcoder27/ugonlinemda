@@ -17,31 +17,31 @@
 
         <div class="space-y-2">
           <div>
-            <span class="block font-medium text-gray-600">Tracking Number:</span>
+            <span class="block font-medium text-gray-500">Tracking Number:</span>
             <span class="block text-red-700 font-semibold hover:underline cursor-pointer">123456</span>
           </div>
           <div>
-            <span class="block font-medium text-gray-600">Service:</span>
+            <span class="block font-medium text-gray-500">Service:</span>
             <span class="block text-gray-800">Service Name</span>
           </div>
           <div>
-            <span class="block font-medium text-gray-600">Service Description:</span>
+            <span class="block font-medium text-gray-500">Service Description:</span>
             <span class="block text-gray-800">Description of the requested service.</span>
           </div>
           <div>
-            <span class="block font-medium text-gray-600">Applicant Name:</span>
+            <span class="block font-medium text-gray-500">Applicant Name:</span>
             <span class="block text-gray-800">John Doe</span>
           </div>
           <div>
-            <span class="block font-medium text-gray-600">Details Used:</span>
+            <span class="block font-medium text-gray-500">Details Used:</span>
             <span class="block text-gray-800">National ID</span>
           </div>
           <div>
-            <span class="block font-medium text-gray-600">Status:</span>
+            <span class="block font-medium text-gray-500">Status:</span>
             <span class="block text-gray-800">Pending</span>
           </div>
           <div>
-            <span class="block font-medium text-gray-600">Date:</span>
+            <span class="block font-medium text-gray-500">Date:</span>
             <span class="block text-gray-800">2024-12-19</span>
           </div>
         </div>
