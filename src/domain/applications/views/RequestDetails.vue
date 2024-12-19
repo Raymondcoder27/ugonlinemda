@@ -49,11 +49,11 @@
 
       <!-- Action Buttons -->
       <div class="flex justify-center space-x-4 mt-6">
-        <button class="px-6 py-1 bg-red-700 text-white rounded-md hover:bg-red-600 transition">
+        <button class="px-4 py-1 bg-red-700 text-white rounded-md hover:bg-red-600 transition">
           <i class="fa fa-times-square"></i>
           Reject
         </button>
-        <button class="px-6 py-1 bg-green-700 text-white rounded-md hover:bg-green-600 transition">
+        <button class="px-4 py-1 bg-green-700 text-white rounded-md hover:bg-green-600 transition">
           <i class="fa fa-check"></i>
           Approve
         </button>
