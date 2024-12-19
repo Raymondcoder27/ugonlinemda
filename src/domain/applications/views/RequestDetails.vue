@@ -5,8 +5,8 @@
   <div class="flex bg-gray-50 min-h-screen overflow-x-hidden overflow-y-auto">
     <div class="w-full max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
       <!-- Breadcrumb -->
-      <div class="text-sm mb-4">
-        <router-link to="/mda/service-requests" class="text-gray-500 hover:text-gray-700">Service Requests</router-link>
+      <div class="text-sm mb-4 bg-gray-10 py-2 rounded-sm">
+        <router-link to="/mda/service-requests" class="text-gray-500 hover:text-gray-700 ml-2">Service Requests</router-link>
         <span class="mx-2 text-gray-400">/</span>
         <span class="text-gray-700 font-semibold">Request Details</span>
       </div>
@@ -49,6 +49,10 @@
 
       <!-- Action Buttons -->
       <div class="flex justify-center space-x-4 mt-6">
+        <button class="px-4 py-1 bg-amber-700 text-white rounded-md hover:bg-amber-600 transition">
+          <i class="fa fa-check"></i>
+          Query
+        </button>
         <button class="px-4 py-1 bg-red-700 text-white rounded-md hover:bg-red-600 transition">
           <i class="fa fa-times-square"></i>
           Reject
