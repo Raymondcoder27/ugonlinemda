@@ -72,7 +72,7 @@ const approveRequest = (id: string) => {
 //   store.rejectServiceRequest(id);
 // };
 
-const viewRequest = (id: string) => {
+const viewRequestDetails = (id: string) => {
   store.viewServiceRequest(id);
 };
 
