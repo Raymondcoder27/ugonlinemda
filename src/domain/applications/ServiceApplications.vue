@@ -556,6 +556,7 @@ watch(
               <label>No applications found</label>
             </td>
           </tr> -->
+          
         </tbody>
       </table>
     </div>
