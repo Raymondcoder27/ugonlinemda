@@ -119,7 +119,7 @@ function rejectRequest() {
           </span>
         </div>
         <p class="py-5">
-          Are you sure you want to delete this template and lose it completely?
+          Are you sure you want to reject this service request?
         </p>
         <div class="flex w-1/2 gap-2 justify-center mx-auto">
           <button
