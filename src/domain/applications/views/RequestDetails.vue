@@ -64,6 +64,34 @@
       </div>
     </div>
   </div>
+
+  <AppModal v-model="showDeleteModal" xl>
+    <div class="flex">
+      <div class="w-full">
+        <div class="flex">
+          <span class="mx-auto text-center justify-center">
+            <i
+              class="mx-auto fa-solid fa-exclamation-circle text-3xl text-danger"
+            ></i>
+          </span>
+        </div>
+        <p class="py-5">
+          Are you sure you want to delete this template and lose it completely?
+        </p>
+        <div class="flex w-1/2 gap-2 justify-center mx-auto">
+          <button class="bg-blue-400 hover:bg-blue-500 w-1/2 rounded text-white" @click="showDeleteModal = false">
+            <i class="fa-solid fa-times-circle mx-1"></i> Cancel
+          </button>
+          <button
+            class="bg-danger text-white p-1 w-1/2 rounded hover:bg-red-800"
+            @click="deleteDocument"
+          >
+            <i class="fa-solid fa-check-circle mx-1"></i> Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+  </AppModal>
 </template>
 
 <style scoped>
