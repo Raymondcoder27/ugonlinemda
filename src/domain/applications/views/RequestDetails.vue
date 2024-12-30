@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, computed, type Ref, ref } from "vue";
+import AppModal from "@/components/AppModal.vue";
 
 const showDeleteModal: Ref<boolean> = ref(false);
 
