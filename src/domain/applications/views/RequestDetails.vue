@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { onMounted, computed, type Ref, ref } from "vue";
+
+const showDeleteModal: Ref<boolean> = ref(false);
+
 function rejectRequest() {
   loading.value = true;
   store
