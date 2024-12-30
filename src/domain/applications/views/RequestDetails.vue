@@ -1,4 +1,22 @@
 <script setup lang="ts">
+function deleteDocument() {
+  loading.value = true;
+  store
+    .deleteDocument(selectedDocumentRef.value)
+    .then(() => {
+      loading.value = false;
+      showDeleteModal.value = false;
+      requestLogs.value.push({ method: 'DELETE', status: 'SUCCESS' });
+      fetch();
+    })
+    .catch((error: AxiosError<ApiErrorResponse>) => {
+      loading.value = false;
+      requestLogs.value.push({ method: 'DELETE', status: 'FAILURE' });
+      notify.error(
+        error.response?.data.message || "Error deleting the document"
+      );
+    });
+}
 </script>
 
 <template>
