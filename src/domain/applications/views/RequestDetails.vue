@@ -1,8 +1,8 @@
 <script setup lang="ts">
-function deleteDocument() {
+function rejectRequest() {
   loading.value = true;
   store
-    .deleteDocument(selectedDocumentRef.value)
+    .rejectRequest(selectedDocumentRef.value)
     .then(() => {
       loading.value = false;
       showDeleteModal.value = false;
@@ -102,7 +102,7 @@ function deleteDocument() {
           </button>
           <button
             class="bg-danger text-white p-1 w-1/2 rounded hover:bg-red-800"
-            @click="deleteDocument"
+            @click="rejectRequest"
           >
             <i class="fa-solid fa-check-circle mx-1"></i> Confirm
           </button>
