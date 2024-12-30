@@ -76,7 +76,11 @@ function rejectRequest() {
           <i class="fa fa-exclamation-circle"></i>
           Query
         </button>
-        <button class="px-4 py-1 bg-red-700 text-white rounded-md hover:bg-red-600 transition">
+        <button
+        @click="
+                        showDeleteModal = true;"
+                        
+        class="px-4 py-1 bg-red-700 text-white rounded-md hover:bg-red-600 transition">
           <i class="fa fa-times-square"></i>
           Reject
         </button>
