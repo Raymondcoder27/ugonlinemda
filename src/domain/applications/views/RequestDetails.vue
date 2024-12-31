@@ -46,7 +46,7 @@ function rejectRequest() {
 </script>
 
 <template>
-  <div class=" bg-gray-50 max-h-[85vh] overflow-y-auto">
+  <div class="bg-gray-50 max-h-[85vh] overflow-y-auto">
     <div class="w-full max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
       <!-- Breadcrumb -->
       <div class="text-sm mb-4 bg-gray-10 py-2 rounded-sm">
@@ -107,7 +107,7 @@ function rejectRequest() {
       <!-- Action Buttons -->
       <div class="flex justify-center space-x-4 mt-6">
         <button
-         @click="showQueryModal = true"
+          @click="showQueryModal = true"
           class="px-4 py-1 bg-amber-600 text-white rounded-md hover:bg-amber-500 transition"
         >
           <i class="fa fa-exclamation-circle"></i>
@@ -160,10 +160,6 @@ function rejectRequest() {
       </div>
     </div>
   </AppModal>
-
-
-
-
 
   <AppModal v-model="showQueryModal" xl>
     <div class="flex">
