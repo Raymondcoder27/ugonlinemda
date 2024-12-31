@@ -176,7 +176,7 @@ function rejectRequest() {
           </span>
         </div>
         <p class="py-5 text-center">
-          Are you sure you want to reject this service request?
+          Are you sure you want to query this service request?
         </p>
         <div class="flex w-1/2 gap-2 justify-center mx-auto">
           <button
