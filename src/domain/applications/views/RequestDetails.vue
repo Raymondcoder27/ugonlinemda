@@ -4,6 +4,27 @@ import AppModal from "@/components/AppModal.vue";
 
 const showRejectModal: Ref<boolean> = ref(false);
 
+const showQueryModal: Ref<boolean> = ref(false);
+
+function queryRequest() {
+  loading.value = true;
+  store
+    .queryRequest(selectedDocumentRef.value)
+    .then(() => {
+      loading.value = false;
+      showQueryModal.value = false;
+      requestLogs.value.push({ method: "PUT", status: "SUCCESS" });
+      fetch();
+    })
+    .catch((error: AxiosError<ApiErrorResponse>) => {
+      loading.value = false;
+      requestLogs.value.push({ method: "PUT", status: "FAILURE" });
+      notify.error(
+        error.response?.data.message || "Error querying the document"
+      );
+    });
+}
+
 function rejectRequest() {
   loading.value = true;
   store
