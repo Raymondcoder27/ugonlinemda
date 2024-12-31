@@ -2,7 +2,7 @@
 import { onMounted, computed, type Ref, ref } from "vue";
 import AppModal from "@/components/AppModal.vue";
 
-const showDeleteModal: Ref<boolean> = ref(false);
+const showRejectModal: Ref<boolean> = ref(false);
 
 function rejectRequest() {
   loading.value = true;
@@ -10,7 +10,7 @@ function rejectRequest() {
     .rejectRequest(selectedDocumentRef.value)
     .then(() => {
       loading.value = false;
-      showDeleteModal.value = false;
+      showRejectModal.value = false;
       requestLogs.value.push({ method: "DELETE", status: "SUCCESS" });
       fetch();
     })
@@ -92,7 +92,7 @@ function rejectRequest() {
           Query
         </button>
         <button
-          @click="showDeleteModal = true"
+          @click="showRejectModal = true"
           class="px-4 py-1 bg-red-700 text-white rounded-md hover:bg-red-600 transition"
         >
           <i class="fa fa-times-square"></i>
@@ -108,7 +108,7 @@ function rejectRequest() {
     </div>
   </div>
 
-  <AppModal v-model="showDeleteModal" xl>
+  <AppModal v-model="showRejectModal" xl>
     <div class="flex">
       <div class="w-full">
         <div class="flex">
@@ -124,7 +124,7 @@ function rejectRequest() {
         <div class="flex w-1/2 gap-2 justify-center mx-auto">
           <button
             class="bg-blue-400 hover:bg-blue-500 w-1/2 rounded text-white"
-            @click="showDeleteModal = false"
+            @click="showRejectModal = false"
           >
             <i class="fa-solid fa-times-circle mx-1"></i> Cancel
           </button>
