@@ -107,6 +107,7 @@ function rejectRequest() {
       <!-- Action Buttons -->
       <div class="flex justify-center space-x-4 mt-6">
         <button
+         @click="showQueryModal = true"
           class="px-4 py-1 bg-amber-600 text-white rounded-md hover:bg-amber-500 transition"
         >
           <i class="fa fa-exclamation-circle"></i>
