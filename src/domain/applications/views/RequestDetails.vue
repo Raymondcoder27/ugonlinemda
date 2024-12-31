@@ -46,7 +46,7 @@ function rejectRequest() {
 </script>
 
 <template>
-  <div class="flex bg-gray-50 max-h-[70vh] overflow-y-auto">
+  <div class="flex bg-gray-50 max-h-[85vh] overflow-y-auto">
     <div class="w-full max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
       <!-- Breadcrumb -->
       <div class="text-sm mb-4 bg-gray-10 py-2 rounded-sm">
