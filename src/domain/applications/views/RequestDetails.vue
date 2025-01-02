@@ -91,7 +91,7 @@ function rejectRequest() {
         <div class="mt-5 mb-5 flex px-2 justify-between">
           <div>
             <span class="block font-sm text-gray-500">Applicant Name:</span>
-            <span class="block text-gray-800">John Doe</span>
+            <span class="block text-gray-800">Mwebe Raymond</span>
           </div>
           <div>
             <span class="block font-sm text-gray-500">Details Used:</span>
