@@ -90,16 +90,16 @@ function rejectRequest() {
         <!-- Applicant Details -->
         <div class="mt-5 mb-5 flex px-2 justify-between">
           <div>
-            <span class="block font-sm text-gray-500">Applicant Name:</span>
-            <span class="block text-gray-800">Mwebe Raymond</span>
+            <span class="block text-sm font-bold text-gray-500">Applicant Name:</span>
+            <span class="block text-sm text-gray-800">Mwebe Raymond</span>
           </div>
           <div>
-            <span class="block font-sm text-gray-500">Details Used:</span>
-            <span class="block text-blue-600 hover:underline hover:cursor-pointer">NATIONAL ID</span>
+            <span class="block text-sm font-bold text-gray-500">Details Used:</span>
+            <span class="block text-sm text-blue-600 hover:underline hover:cursor-pointer">NATIONAL ID</span>
           </div>
           <div>
-            <span class="block font-sm text-gray-500">Date:</span>
-            <span class="block text-gray-800">2024-12-19</span>
+            <span class="block text-sm font-bold text-gray-500">Date:</span>
+            <span class="block text-sm text-gray-800">2024-12-19</span>
           </div>
         </div>
 
