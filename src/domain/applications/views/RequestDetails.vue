@@ -68,7 +68,7 @@ function rejectRequest() {
           </div>
           <div class="w-11/12 my-auto">
             <p class="font-bold text-md capitalize">Company Incorporation</p>
-            <p class="text-sm capitalize">NIRA</p>
+            <p class="text-sm capitalize">Posta Uganda</p>
           </div>
         </div>
         <!-- Request Details Card -->
