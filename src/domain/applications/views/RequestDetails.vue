@@ -63,7 +63,7 @@ function rejectRequest() {
             <img class="service-thumbnail" src="https://nira.go.ug/assets/exports/nira_logo_black@2x.png" />
           </div>
           <div class="w-10/12 my-auto">
-            <p class="font-bold text-md capitalize">National Identification & Registration Authority</p>
+            <p class="font-bold text-md capitalize">National Identity Card Registration</p>
             <p class="text-sm capitalize">NIRA</p>
           </div>
         </div>
@@ -82,14 +82,32 @@ function rejectRequest() {
             <p class="text-sm">Pending</p>
           </div>
         </div>
+
+        <!-- Applicant Details -->
+        <div class="mt-5 mb-5 grid grid-cols-3 gap-4">
+          <div>
+            <span class="block font-medium text-gray-500">Applicant Name:</span>
+            <span class="block text-gray-800">John Doe</span>
+          </div>
+          <div>
+            <span class="block font-medium text-gray-500">Details Used:</span>
+            <span class="block text-gray-800">National ID</span>
+          </div>
+          <div>
+            <span class="block font-medium text-gray-500">Date:</span>
+            <span class="block text-gray-800">2024-12-19</span>
+          </div>
+        </div>
+
         <!-- Contact Information -->
         <div class="flex bg-gray-50 p-2 mt-2 rounded">
           <div class="w-full py-3">
             <div class="flex text-gray-600">
               <div class="w-full text-sm">
                 <p class="font-bold">Contact Information</p>
-                <p class="text-sm">info@nira.com</p>
-                <p class="text-sm">0800211700</p>
+                <p class="text-sm">Posta, Kampala Branch</p>
+                <!-- <p class="text-sm">info@nira.com</p> -->
+                <p class="text-sm">25678346573</p>
               </div>
             </div>
           </div>
