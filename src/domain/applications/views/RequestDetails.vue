@@ -69,15 +69,15 @@ function rejectRequest() {
         </div>
         <!-- Request Details Card -->
         <div class="flex justify-between bg-green-100 rounded p-2 border border-green-200 mt-4">
-          <div class="w-4/12 mx-auto">
+          <div class="">
             <p class="text-sm font-bold pt-3">Tracking Number:</p>
             <p class="text-sm">123456</p>
           </div>
-          <div class="w-4/12 mx-auto">
+          <div class="">
             <p class="text-sm font-bold pt-3">Service:</p>
             <p class="text-sm">Service Name</p>
           </div>
-          <div class="w-4/12 mx-auto">
+          <div class="">
             <p class="text-sm font-bold pt-3">Status:</p>
             <p class="text-sm">Pending</p>
           </div>
