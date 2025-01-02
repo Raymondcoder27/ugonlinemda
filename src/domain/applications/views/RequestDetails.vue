@@ -64,7 +64,7 @@ function rejectRequest() {
             <!-- use the one for ursb -->
             <!-- <img class="service-thumbnail" src="https://ursb.go.ug/assets/images/ug/Logo_Colour-01.jpg" /> -->
              <!-- use the one for posta uganda -->
-            <img class="service-thumbnail" src="https://ugapost.co.ug/wp-content/uploads/2024/08/download.png" />
+            <img class="service-thumbnail" src="@/assets/images/eposta.png" />
           </div>
           <div class="w-10/12 my-auto">
             <p class="font-bold text-md capitalize">Company Incorporation</p>
