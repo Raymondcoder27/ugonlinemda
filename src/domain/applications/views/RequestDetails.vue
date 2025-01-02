@@ -60,10 +60,12 @@ function rejectRequest() {
       <div class="w-full">
         <div class="flex">
           <div class="w-2/12">
-            <img class="service-thumbnail" src="https://nira.go.ug/assets/exports/nira_logo_black@2x.png" />
+            <!-- <img class="service-thumbnail" src="https://nira.go.ug/assets/exports/nira_logo_black@2x.png" /> -->
+            <!-- use the one for ursb -->
+            <img class="service-thumbnail" src="https://ursb.go.ug/assets/images/ug/Logo_Colour-01.jpg" />
           </div>
           <div class="w-10/12 my-auto">
-            <p class="font-bold text-md capitalize">National Identity Card Registration</p>
+            <p class="font-bold text-md capitalize">Company Incorporation</p>
             <p class="text-sm capitalize">NIRA</p>
           </div>
         </div>
@@ -86,15 +88,15 @@ function rejectRequest() {
         <!-- Applicant Details -->
         <div class="mt-5 mb-5 flex px-2 justify-between">
           <div>
-            <span class="block font-medium text-gray-500">Applicant Name:</span>
+            <span class="block font-sm text-gray-500">Applicant Name:</span>
             <span class="block text-gray-800">John Doe</span>
           </div>
           <div>
-            <span class="block font-medium text-gray-500">Details Used:</span>
-            <span class="block text-blue-600 hover:underline hover:cursor:pointer">NATIONAL ID</span>
+            <span class="block font-sm text-gray-500">Details Used:</span>
+            <span class="block text-blue-600 hover:underline hover:cursor-pointer">NATIONAL ID</span>
           </div>
           <div>
-            <span class="block font-medium text-gray-500">Date:</span>
+            <span class="block font-sm text-gray-500">Date:</span>
             <span class="block text-gray-800">2024-12-19</span>
           </div>
         </div>
