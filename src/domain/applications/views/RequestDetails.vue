@@ -84,7 +84,7 @@ function rejectRequest() {
         </div>
 
         <!-- Applicant Details -->
-        <div class="mt-5 mb-5 grid grid-cols-3 gap-4">
+        <div class="mt-5 mb-5 flex px-2 justify-between">
           <div>
             <span class="block font-medium text-gray-500">Applicant Name:</span>
             <span class="block text-gray-800">John Doe</span>
