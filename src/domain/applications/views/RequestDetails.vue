@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { onMounted, computed, type Ref, ref } from "vue";
+import { ref } from "vue";
 import AppModal from "@/components/AppModal.vue";
 
-const showRejectModal: Ref<boolean> = ref(false);
-
-const showQueryModal: Ref<boolean> = ref(false);
+const showRejectModal = ref(false);
+const showQueryModal = ref(false);
 
 function queryRequest() {
   loading.value = true;
@@ -16,7 +15,7 @@ function queryRequest() {
       requestLogs.value.push({ method: "PUT", status: "SUCCESS" });
       fetch();
     })
-    .catch((error: AxiosError<ApiErrorResponse>) => {
+    .catch((error) => {
       loading.value = false;
       requestLogs.value.push({ method: "PUT", status: "FAILURE" });
       notify.error(
@@ -35,7 +34,7 @@ function rejectRequest() {
       requestLogs.value.push({ method: "DELETE", status: "SUCCESS" });
       fetch();
     })
-    .catch((error: AxiosError<ApiErrorResponse>) => {
+    .catch((error) => {
       loading.value = false;
       requestLogs.value.push({ method: "DELETE", status: "FAILURE" });
       notify.error(
@@ -46,10 +45,8 @@ function rejectRequest() {
 </script>
 
 <template>
-  <div class="bg-gray-50 max-h-[85vh] overflow-y-auto">
-    <div class="w-full max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
-      <!-- Breadcrumb -->
-      <div class="text-sm mb-4 bg-gray-10 py-2 rounded-sm">
+  <div class="p-5 bg-white overflow-y-auto relative" style="max-height: 590px;">
+    <div class="text-sm mb-4 bg-gray-10 py-2 rounded-sm">
         <router-link
           to="/mda/service-requests"
           class="text-gray-500 hover:text-gray-700 ml-2"
@@ -58,140 +55,112 @@ function rejectRequest() {
         <span class="mx-2 text-gray-400">/</span>
         <span class="text-gray-700 font-semibold">Request Details</span>
       </div>
+    <div class="flex py-2 px-2">
+      <!-- Thumbnail and Info -->
+      <div class="w-full">
+        <div class="flex">
+          <div class="w-2/12">
+            <img class="service-thumbnail" src="https://nira.go.ug/assets/exports/nira_logo_black@2x.png" />
+          </div>
+          <div class="w-10/12 my-auto">
+            <p class="font-bold text-md capitalize">National Identification & Registration Authority</p>
+            <p class="text-sm capitalize">NIRA</p>
+          </div>
+        </div>
+        <!-- Request Details Card -->
+        <div class="flex bg-green-100 rounded p-2 border border-green-200 mt-4">
+          <div class="w-4/12 mx-auto">
+            <p class="text-sm font-bold pt-3">Tracking Number:</p>
+            <p class="text-sm">123456</p>
+          </div>
+          <div class="w-4/12 mx-auto">
+            <p class="text-sm font-bold pt-3">Service:</p>
+            <p class="text-sm">Service Name</p>
+          </div>
+          <div class="w-4/12 mx-auto">
+            <p class="text-sm font-bold pt-3">Status:</p>
+            <p class="text-sm">Pending</p>
+          </div>
+        </div>
+        <!-- Contact Information -->
+        <div class="flex bg-gray-50 p-2 mt-2 rounded">
+          <div class="w-full py-3">
+            <div class="flex text-gray-600">
+              <div class="w-full text-sm">
+                <p class="font-bold">Contact Information</p>
+                <p class="text-sm">info@nira.com</p>
+                <p class="text-sm">0800211700</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Action Buttons -->
+        <div class="flex justify-center space-x-4 mt-6">
+          <button @click="showQueryModal = true" class="px-4 py-1 bg-amber-600 text-white rounded-md hover:bg-amber-500 transition">
+            <i class="fa fa-exclamation-circle"></i>
+            Query
+          </button>
+          <button @click="showRejectModal = true" class="px-4 py-1 bg-red-700 text-white rounded-md hover:bg-red-600 transition">
+            <i class="fa fa-times-square"></i>
+            Reject
+          </button>
+          <button class="px-4 py-1 bg-green-700 text-white rounded-md hover:bg-green-600 transition">
+            <i class="fa fa-check"></i>
+            Approve
+          </button>
+        </div>
+      </div>
+    </div>
 
-      <!-- Details Card -->
-      <div class="space-y-4">
-        <div class="text-lg font-semibold text-gray-800">Request Details</div>
-
-        <div class="space-y-2">
-          <div>
-            <span class="block font-medium text-gray-500"
-              >Tracking Number:</span
-            >
-            <span
-              class="block text-red-700 font-semibold hover:underline cursor-pointer"
-              >123456</span
-            >
+    <!-- Reject Modal -->
+    <AppModal v-model="showRejectModal" xl>
+      <div class="flex">
+        <div class="w-full">
+          <div class="flex">
+            <span class="mx-auto text-center justify-center">
+              <i class="mx-auto fa-solid fa-exclamation-circle text-3xl text-danger"></i>
+            </span>
           </div>
-          <div>
-            <span class="block font-medium text-gray-500">Service:</span>
-            <span class="block text-gray-800">Service Name</span>
-          </div>
-          <div>
-            <span class="block font-medium text-gray-500"
-              >Service Description:</span
-            >
-            <span class="block text-gray-800"
-              >Description of the requested service.</span
-            >
-          </div>
-          <div>
-            <span class="block font-medium text-gray-500">Applicant Name:</span>
-            <span class="block text-gray-800">John Doe</span>
-          </div>
-          <div>
-            <span class="block font-medium text-gray-500">Details Used:</span>
-            <span class="block text-gray-800">National ID</span>
-          </div>
-          <div>
-            <span class="block font-medium text-gray-500">Status:</span>
-            <span class="block text-gray-800">Pending</span>
-          </div>
-          <div>
-            <span class="block font-medium text-gray-500">Date:</span>
-            <span class="block text-gray-800">2024-12-19</span>
+          <p class="py-5 text-center">Are you sure you want to reject this service request?</p>
+          <div class="flex w-1/2 gap-2 justify-center mx-auto">
+            <button class="bg-blue-400 hover:bg-blue-500 w-1/2 rounded text-white" @click="showRejectModal = false">
+              <i class="fa-solid fa-times-circle mx-1"></i> Cancel
+            </button>
+            <button class="bg-danger text-white p-1 w-1/2 rounded hover:bg-red-800" @click="rejectRequest">
+              <i class="fa-solid fa-check-circle mx-1"></i> Confirm
+            </button>
           </div>
         </div>
       </div>
+    </AppModal>
 
-      <!-- Action Buttons -->
-      <div class="flex justify-center space-x-4 mt-6">
-        <button
-          @click="showQueryModal = true"
-          class="px-4 py-1 bg-amber-600 text-white rounded-md hover:bg-amber-500 transition"
-        >
-          <i class="fa fa-exclamation-circle"></i>
-          Query
-        </button>
-        <button
-          @click="showRejectModal = true"
-          class="px-4 py-1 bg-red-700 text-white rounded-md hover:bg-red-600 transition"
-        >
-          <i class="fa fa-times-square"></i>
-          Reject
-        </button>
-        <button
-          class="px-4 py-1 bg-green-700 text-white rounded-md hover:bg-green-600 transition"
-        >
-          <i class="fa fa-check"></i>
-          Approve
-        </button>
+    <!-- Query Modal -->
+    <AppModal v-model="showQueryModal" xl>
+      <div class="flex">
+        <div class="w-full">
+          <div class="flex">
+            <span class="mx-auto text-center justify-center">
+              <i class="mx-auto fa-solid fa-exclamation-circle text-3xl text-danger"></i>
+            </span>
+          </div>
+          <p class="py-5 text-center">Are you sure you want to query this service request?</p>
+          <div class="flex w-1/2 gap-2 justify-center mx-auto">
+            <button class="bg-blue-400 hover:bg-blue-500 w-1/2 rounded text-white" @click="showQueryModal = false">
+              <i class="fa-solid fa-times-circle mx-1"></i> Cancel
+            </button>
+            <button class="bg-danger text-white p-1 w-1/2 rounded hover:bg-red-800" @click="rejectRequest">
+              <i class="fa-solid fa-check-circle mx-1"></i> Confirm
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+    </AppModal>
   </div>
-
-  <AppModal v-model="showRejectModal" xl>
-    <div class="flex">
-      <div class="w-full">
-        <div class="flex">
-          <span class="mx-auto text-center justify-center">
-            <i
-              class="mx-auto fa-solid fa-exclamation-circle text-3xl text-danger"
-            ></i>
-          </span>
-        </div>
-        <p class="py-5 text-center">
-          Are you sure you want to reject this service request?
-        </p>
-        <div class="flex w-1/2 gap-2 justify-center mx-auto">
-          <button
-            class="bg-blue-400 hover:bg-blue-500 w-1/2 rounded text-white"
-            @click="showRejectModal = false"
-          >
-            <i class="fa-solid fa-times-circle mx-1"></i> Cancel
-          </button>
-          <button
-            class="bg-danger text-white p-1 w-1/2 rounded hover:bg-red-800"
-            @click="rejectRequest"
-          >
-            <i class="fa-solid fa-check-circle mx-1"></i> Confirm
-          </button>
-        </div>
-      </div>
-    </div>
-  </AppModal>
-
-  <AppModal v-model="showQueryModal" xl>
-    <div class="flex">
-      <div class="w-full">
-        <div class="flex">
-          <span class="mx-auto text-center justify-center">
-            <i
-              class="mx-auto fa-solid fa-exclamation-circle text-3xl text-danger"
-            ></i>
-          </span>
-        </div>
-        <p class="py-5 text-center">
-          Are you sure you want to query this service request?
-        </p>
-        <div class="flex w-1/2 gap-2 justify-center mx-auto">
-          <button
-            class="bg-blue-400 hover:bg-blue-500 w-1/2 rounded text-white"
-            @click="showQueryModal = false"
-          >
-            <i class="fa-solid fa-times-circle mx-1"></i> Cancel
-          </button>
-          <button
-            class="bg-danger text-white p-1 w-1/2 rounded hover:bg-red-800"
-            @click="rejectRequest"
-          >
-            <i class="fa-solid fa-check-circle mx-1"></i> Confirm
-          </button>
-        </div>
-      </div>
-    </div>
-  </AppModal>
 </template>
 
 <style scoped>
+.service-thumbnail {
+  width: 100px;
+  height: auto;
+}
 </style>
