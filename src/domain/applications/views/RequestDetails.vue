@@ -68,7 +68,7 @@ function rejectRequest() {
           </div>
         </div>
         <!-- Request Details Card -->
-        <div class="flex bg-green-100 rounded p-2 border border-green-200 mt-4">
+        <div class="flex justify-between bg-green-100 rounded p-2 border border-green-200 mt-4">
           <div class="w-4/12 mx-auto">
             <p class="text-sm font-bold pt-3">Tracking Number:</p>
             <p class="text-sm">123456</p>
@@ -100,7 +100,8 @@ function rejectRequest() {
         </div>
 
         <!-- Contact Information -->
-        <div class="flex bg-gray-50 p-2 mt-2 rounded">
+        <!-- <div class="flex bg-gray-50 p-2 mt-2 rounded"> -->
+        <div class="flex p-2 mt-2 rounded">
           <div class="w-full py-3">
             <div class="flex text-gray-600">
               <div class="w-full text-sm">
