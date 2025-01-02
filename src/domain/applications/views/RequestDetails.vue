@@ -91,7 +91,7 @@ function rejectRequest() {
           </div>
           <div>
             <span class="block font-medium text-gray-500">Details Used:</span>
-            <span class="block text-gray-800">National ID</span>
+            <span class="block text-blue-600 hover:underline hover:cursor:pointer">NATIONAL ID</span>
           </div>
           <div>
             <span class="block font-medium text-gray-500">Date:</span>
