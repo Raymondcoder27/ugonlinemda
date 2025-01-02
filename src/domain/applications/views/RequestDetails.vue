@@ -59,14 +59,14 @@ function rejectRequest() {
       <!-- Thumbnail and Info -->
       <div class="w-full">
         <div class="flex">
-          <div class="w-2/12">
+          <div class="w-1/12">
             <!-- <img class="service-thumbnail" src="https://nira.go.ug/assets/exports/nira_logo_black@2x.png" /> -->
             <!-- use the one for ursb -->
             <!-- <img class="service-thumbnail" src="https://ursb.go.ug/assets/images/ug/Logo_Colour-01.jpg" /> -->
              <!-- use the one for posta uganda -->
-            <img class="service-thumbnail" src="@/assets/images/eposta.png" />
+            <img class="w-[30px]" src="@/assets/images/eposta.png" />
           </div>
-          <div class="w-10/12 my-auto">
+          <div class="w-11/12 my-auto">
             <p class="font-bold text-md capitalize">Company Incorporation</p>
             <p class="text-sm capitalize">NIRA</p>
           </div>
