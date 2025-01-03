@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import AppModal from "@/components/AppModal.vue";
 
+const showApproveModal = ref(false);
 const showRejectModal = ref(false);
 const showQueryModal = ref(false);
 
@@ -135,6 +136,28 @@ function rejectRequest() {
         </div>
       </div>
     </div>
+
+    <!-- Approve Modal -->
+    <AppModal v-model="showApproveModal" xl>
+      <div class="flex">
+        <div class="w-full">
+          <div class="flex">
+            <span class="mx-auto text-center justify-center">
+              <i class="mx-auto fa-solid fa-exclamation-circle text-3xl text-danger"></i>
+            </span>
+          </div>
+          <p class="py-5 text-center">Are you sure you want to approve this service request?</p>
+          <div class="flex w-1/2 gap-2 justify-center mx-auto">
+            <button class="bg-gray-600 hover:bg-gray-500 w-1/2 rounded text-white" @click="showApproveModal = false">
+              <i class="fa-solid fa-times-circle mx-1"></i> Cancel
+            </button>
+            <button class="bg-primary text-white p-1 w-1/2 rounded hover:bg-red-800" @click="rejectRequest">
+              <i class="fa-solid fa-check-circle mx-1"></i> Confirm
+            </button>
+          </div>
+        </div>
+      </div>
+    </AppModal>
 
     <!-- Reject Modal -->
     <AppModal v-model="showRejectModal" xl>
