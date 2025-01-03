@@ -478,7 +478,7 @@ watch(
                   >Pending</span
                 >
               </div>
-              <div v-else-if="application.status == 'Rejected'">
+              <div v-if="application.status == 'Rejected'">
                 <label>
                   <span
                     class="text-xs cursor-pointer rounded-md px-1 py-0.5 font-semibold text-red-600 bg-red-100 border border-red-200 hover:text-red-700 hover:bg-red-200"
@@ -487,7 +487,7 @@ watch(
                   >
                 </label>
               </div>
-              <div v-else>
+              <div v-if="application.status == 'Approved'">
                 <label>
                   <span
                     class="text-xs cursor-pointer rounded-md px-1 py-0.5 font-semibold text-green-600 bg-green-100 border border-green-200 hover:text-green-700 hover:bg-green-200"
@@ -496,7 +496,15 @@ watch(
                   >
                 </label>
               </div>
-
+              <div v-if="application.status == 'Queried'">
+                <label>
+                  <span
+                    class="text-xs cursor-pointer rounded-md px-1 py-0.5 font-semibold text-blue-600 bg-blue-100 border border-blue-200 hover:text-blue-700 hover:bg-blue-200"
+                    @click="view(application)"
+                    >Queried</span
+                  >
+                </label>    
+              </div>
               <!-- <span>
                 {{ application.status }}
               </span> -->
