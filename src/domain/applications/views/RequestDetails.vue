@@ -1,13 +1,21 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 import AppModal from "@/components/AppModal.vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
 
-const requestId = computed(() => {
-  return route.params.requestId;
-})
+const requestId = computed(() => route.params.requestId || 'unknown');
+
+// const requestId = computed(() => {
+//   return route.params.requestId;
+// })
+
+
+watch(() => route.params.requestId, (newId) => {
+  console.log('New requestId:', newId);
+});
+
 
 
 const showApproveModal = ref(false);
