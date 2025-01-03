@@ -601,7 +601,7 @@ watch(
   </div>
 
   <!-- Modal -->
-  <AppModal v-model="modalOpen" xl4>
+  <!-- <AppModal v-model="modalOpen" xl4>
     <div class="flex">
       <div class="w-full">
         <table class="w-full">
@@ -680,7 +680,7 @@ watch(
         </table>
       </div>
     </div>
-  </AppModal>
+  </AppModal> -->
   <!-- /Modal -->
 </template>
 
