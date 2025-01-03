@@ -477,7 +477,6 @@ watch(
                   @click="view(application)"
                   >Pending</span
                 >
-
               </div>
               <div v-else-if="application.status == 'Rejected'">
                 <label>
@@ -522,9 +521,13 @@ watch(
                   <i class="fa-solid fa-times-square px-1"></i> 
                   Reject
                 </button> -->
-                <router-link to="/mda/service-request-details" class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700">
+                <router-link
+                  to="/mda/service-request-details"
+                  class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
+                >
                   <i class="fa-solid fa-eye px-1"></i>
-                  View Details</router-link>
+                  View Details</router-link
+                >
                 <!-- <button
                   class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
                   @click="viewRequestDetails(application.id)"
@@ -532,19 +535,18 @@ watch(
                   <i class="fa-solid fa-eye px-1"></i> 
                   View Request Details
                 </button> -->
-
               </div>
               <!-- <div v-if="">
 
               </div> -->
               <div v-else>
                 <button
-                class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
-                @click="view(application)"
-              >
-                <i class="fa-solid fa-eye px-1"></i> View Details
-              </button>
-                </div>
+                  class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
+                  @click="view(application)"
+                >
+                  <i class="fa-solid fa-eye px-1"></i> View Details
+                </button>
+              </div>
             </td>
           </tr>
           <!-- <tr>
@@ -556,7 +558,6 @@ watch(
               <label>No applications found</label>
             </td>
           </tr> -->
-          
         </tbody>
       </table>
     </div>
