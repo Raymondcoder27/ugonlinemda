@@ -151,7 +151,7 @@ function rejectRequest() {
             <button class="bg-gray-600 hover:bg-gray-500 w-1/2 rounded text-white" @click="showApproveModal = false">
               <i class="fa-solid fa-times-circle mx-1"></i> Cancel
             </button>
-            <button class="bg-primary text-white p-1 w-1/2 rounded hover:bg-red-800" @click="rejectRequest">
+            <button class="bg-green-700 text-white p-1 w-1/2 rounded hover:bg-green-800" @click="rejectRequest">
               <i class="fa-solid fa-check-circle mx-1"></i> Confirm
             </button>
           </div>
@@ -173,7 +173,7 @@ function rejectRequest() {
             <button class="bg-gray-600 hover:bg-gray-500 w-1/2 rounded text-white" @click="showRejectModal = false">
               <i class="fa-solid fa-times-circle mx-1"></i> Cancel
             </button>
-            <button class="bg-primary text-white p-1 w-1/2 rounded hover:bg-red-800" @click="rejectRequest">
+            <button class="bg-green-700 text-white p-1 w-1/2 rounded hover:bg-green-800" @click="rejectRequest">
               <i class="fa-solid fa-check-circle mx-1"></i> Confirm
             </button>
           </div>
@@ -195,7 +195,7 @@ function rejectRequest() {
             <button class="bg-gray-600 hover:bg-gray-500 w-1/2 rounded text-white" @click="showQueryModal = false">
               <i class="fa-solid fa-times-circle mx-1"></i> Cancel
             </button>
-            <button class="bg-primary text-white p-1 w-1/2 rounded hover:bg-red-800" @click="rejectRequest">
+            <button class="bg-green-700 text-white p-1 w-1/2 rounded hover:bg-green-800" @click="rejectRequest">
               <i class="fa-solid fa-check-circle mx-1"></i> Confirm
             </button>
           </div>
