@@ -752,7 +752,7 @@ watch(
                 {{ convertDateTimeNullable(selectedApplication?.createdAt) }}
               </td>
             </tr>
-            <tr class="border border-gray-50">
+            <!-- <tr class="border border-gray-50">
               <td class="p-1 font-bold">Payload</td>
               <td class="p-1 bg-gray-50">
                 <div class="flex">
@@ -761,7 +761,7 @@ watch(
                   </div>
                 </div>
               </td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
       </div>
