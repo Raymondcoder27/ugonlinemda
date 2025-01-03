@@ -109,7 +109,7 @@ function rejectRequest() {
           <div class="w-full py-3">
             <div class="flex text-gray-600">
               <div class="w-full text-sm">
-                <p class="font-bold">Contact Information</p>
+                <p class="font-bold">Agent Information</p>
                 <!-- <p class="text-sm">Mwebe Raymond</p> -->
                 <p class="text-sm">Posta Uganda, Kampala Branch</p>
                 <!-- <p class="text-sm">info@nira.com</p> -->
