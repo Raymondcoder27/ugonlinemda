@@ -534,14 +534,12 @@ watch(
                   class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
                 > -->
                 <router-link
-                to="`/mda/service-request-details/${application.id}`"
+                  to="`/mda/service-request-details/${application.id}`"
                   class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
                 >
                   <i class="fa-solid fa-eye px-1"></i>
                   View Details</router-link
                 >
-
-
 
                 <!-- <button
                   class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
@@ -690,10 +688,8 @@ watch(
   </AppModal> -->
   <!-- /Modal -->
 
-
-  
-  <!-- /Modal --> 
- <AppModal v-model="modalOpen" xl4>
+  <!-- /Modal -->
+  <AppModal v-model="modalOpen" xl4>
     <div class="flex">
       <div class="w-full">
         <table class="w-full">
@@ -750,7 +746,7 @@ watch(
               <td class="p-1 font-bold">Payment Reference</td>
               <td class="p-1">
                 <!-- {{ selectedApplication?.paymentInfo.payment_ref }} -->
-                  Mobile Money
+                Mobile Money
               </td>
             </tr>
             <tr class="border border-gray-50">
@@ -773,7 +769,7 @@ watch(
         </table>
       </div>
     </div>
-  </AppModal> 
+  </AppModal>
 </template>
 
 <style scoped>
