@@ -6,6 +6,7 @@ import type { IGoFilter } from "@/types";
 // import { request } from "http";
 // import { useDebounce } from "@vueuse/core";
 import moment from "moment/moment";
+// import { useRoute } from "vue-router";
 
 const store = useBilling();
 const page = ref(1);
@@ -63,6 +64,10 @@ const updateFilter = useDebounceFn(
   { maxWait: 5000 }
 );
 
+const route =  useRoute();
+
+
+
 // Watch for changes in the filter object
 watch(
   () => filter,
@@ -89,6 +94,10 @@ const rejectFloatRequest = (requestId: any) => {
 
 onMounted(() => {
   store.fetchFloatRequests();
+
+  // if(route.params.accountId){
+  //   store.fetchFloatRequests(route.params.accountId);
+  // }
 });
 </script>
 
