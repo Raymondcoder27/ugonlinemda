@@ -743,6 +743,7 @@ watch(
               <td class="p-1 font-bold">Payment Reference</td>
               <td class="p-1">
                 <!-- {{ selectedApplication?.paymentInfo.payment_ref }} -->
+                  Mobile Money
               </td>
             </tr>
             <tr class="border border-gray-50">
