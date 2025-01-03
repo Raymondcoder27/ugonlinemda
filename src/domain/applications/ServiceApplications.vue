@@ -530,7 +530,7 @@ watch(
                   Reject
                 </button> -->
                 <router-link
-                  to="/mda/service-request-details/:id"
+                  to="/mda/service-request-details/:requestId"
                   class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
                 >
                   <i class="fa-solid fa-eye px-1"></i>
