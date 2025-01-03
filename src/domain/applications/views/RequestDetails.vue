@@ -1,6 +1,14 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import AppModal from "@/components/AppModal.vue";
+import { useRoute } from "vue-router";
+
+const route = useRoute();
+
+const requestId = computed(() => {
+  return route.params.requestId;
+})
+
 
 const showApproveModal = ref(false);
 const showRejectModal = ref(false);

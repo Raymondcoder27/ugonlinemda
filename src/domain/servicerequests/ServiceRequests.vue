@@ -6,13 +6,6 @@ import type { IGoFilter } from "@/types";
 // import { request } from "http";
 // import { useDebounce } from "@vueuse/core";
 import moment from "moment/moment";
-import { useRoute } from "vue-router";
-
-const route = useRoute();
-
-const requestId = computed(() => {
-  return route.params.requestId;
-})
 
 // computed(() => {
 //   store.fetchFloatRequests();
