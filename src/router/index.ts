@@ -68,8 +68,8 @@ const appRoutes: RouteRecordRaw[] = [
       {
         name: "app-service-request-details",
         path: "/mda/service-request-details/:requestId",
-        // component: ServiceRequestDetails,
-        component: import("../domain/applications/views/RequestDetails.vue"),
+        component: ServiceRequestDetails,
+        // component: import("../domain/applications/views/RequestDetails.vue"),
       },
       {
         name: "app-branches",
