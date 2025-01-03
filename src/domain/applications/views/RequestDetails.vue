@@ -129,7 +129,7 @@ function rejectRequest() {
             <i class="fa fa-times-square"></i>
             Reject
           </button>
-          <button class="px-4 py-1 bg-green-700 text-white rounded-md hover:bg-green-600 transition">
+          <button @click="showApproveModal = true" class="px-4 py-1 bg-green-700 text-white rounded-md hover:bg-green-600 transition">
             <i class="fa fa-check"></i>
             Approve
           </button>
