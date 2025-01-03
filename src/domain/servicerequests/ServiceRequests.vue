@@ -1,12 +1,18 @@
 <script setup lang="ts">
 import { useBilling } from "@/domain/billing/stores";
-import { onMounted, ref, reactive, watch } from "vue";
+import { onMounted, ref, reactive, watch, computed } from "vue";
 import { useDebounceFn } from "@vueuse/core";
 import type { IGoFilter } from "@/types";
 // import { request } from "http";
 // import { useDebounce } from "@vueuse/core";
 import moment from "moment/moment";
-// import { useRoute } from "vue-router";
+import { useRoute } from "vue-router";
+
+const route = useRoute();
+
+const requestId = computed() => {
+  return route.params.requestId;
+}
 
 const store = useBilling();
 const page = ref(1);
