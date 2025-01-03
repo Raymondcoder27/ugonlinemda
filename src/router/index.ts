@@ -67,7 +67,7 @@ const appRoutes: RouteRecordRaw[] = [
       },
       {
         name: "app-service-request-details",
-        path: "/mda/service-request-details",
+        path: "/mda/service-request-details/:id",
         component: ServiceRequestDetails,
       },
       {
