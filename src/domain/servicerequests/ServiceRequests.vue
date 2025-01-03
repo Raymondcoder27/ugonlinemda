@@ -10,10 +10,13 @@ import { useRoute } from "vue-router";
 
 const route = useRoute();
 
-const requestId = computed() => {
+const requestId = computed(() => {
   return route.params.requestId;
-}
+})
 
+// computed(() => {
+//   store.fetchFloatRequests();
+// });
 const store = useBilling();
 const page = ref(1);
 const limit = ref(10);
