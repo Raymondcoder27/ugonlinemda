@@ -67,7 +67,6 @@ const updateFilter = useDebounceFn(
   { maxWait: 5000 }
 );
 
-
 // Watch for changes in the filter object
 watch(
   () => filter,
@@ -105,9 +104,17 @@ onMounted(() => {
   <div class="w-full shadow-lg bg-white rounded p-2 h-full">
     <div class="flex space-x-2 my-1 pt-1 pb-3">
       <div class="flex-grow">
-        <div class="grid grid-cols-5 gap-2 bg-gray-10 border border-gray-200 rounded px-2 py-3">
-            <select v-if="filter.filter !== undefined" input-type="text" v-model="filter.filter[2].operand"
-            class="filter-element e-input" type="text" placeholder="Search by Service">
+        <div
+          class="grid grid-cols-5 gap-2 bg-gray-10 border border-gray-200 rounded px-2 py-3"
+        >
+          <select
+            v-if="filter.filter !== undefined"
+            input-type="text"
+            v-model="filter.filter[2].operand"
+            class="filter-element e-input"
+            type="text"
+            placeholder="Search by Service"
+          >
             <option value="" disabled selected>--Filter by Branch--</option>
             <option value="Branch 1">Branch 1</option>
             <option value="Branch 2">Branch 2</option>
@@ -120,8 +127,14 @@ onMounted(() => {
             <option value="URSB"> &lt 10,000,000 >= </option>
             <option value="NARO"> > 10,000,000 </option>
           </select> -->
-          <select v-if="filter.filter !== undefined" input-type="text" v-model="filter.filter[1].operand"
-            class="filter-element e-input" type="text" placeholder="Filter by Status">
+          <select
+            v-if="filter.filter !== undefined"
+            input-type="text"
+            v-model="filter.filter[1].operand"
+            class="filter-element e-input"
+            type="text"
+            placeholder="Filter by Status"
+          >
             <option value="" disabled selected>--Filter by Status--</option>
             <option value="PENDING">PENDING</option>
             <option value="COMPLETED">APPROVED</option>
@@ -148,7 +161,6 @@ onMounted(() => {
             />
           </div>
         </div>
-        
       </div>
     </div>
     <div class="flex my-1">
