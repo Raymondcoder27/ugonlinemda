@@ -147,7 +147,7 @@ function rejectRequest() {
           </div>
           <p class="py-5 text-center">Are you sure you want to reject this service request?</p>
           <div class="flex w-1/2 gap-2 justify-center mx-auto">
-            <button class="bg-gray-400 hover:bg-gray-500 w-1/2 rounded text-white" @click="showRejectModal = false">
+            <button class="bg-gray-600 hover:bg-gray-500 w-1/2 rounded text-white" @click="showRejectModal = false">
               <i class="fa-solid fa-times-circle mx-1"></i> Cancel
             </button>
             <button class="bg-primary text-white p-1 w-1/2 rounded hover:bg-red-800" @click="rejectRequest">
