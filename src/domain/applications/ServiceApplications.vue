@@ -540,9 +540,11 @@ watch(
                   <i class="fa-solid fa-eye px-1"></i>
                   View Details</router-link
                 > -->
-                <a class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
-                 :href="`/mda/service-request-details/${application.id}`">View Details</a>
-
+                <a
+                  class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
+                  :href="`/mda/service-request-details/${application.id}`"
+                  >View Details</a
+                >
 
                 <!-- <button
                   class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
