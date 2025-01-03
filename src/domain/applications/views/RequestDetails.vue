@@ -169,10 +169,10 @@ function rejectRequest() {
           </div>
           <p class="py-5 text-center">Are you sure you want to query this service request?</p>
           <div class="flex w-1/2 gap-2 justify-center mx-auto">
-            <button class="bg-blue-400 hover:bg-blue-500 w-1/2 rounded text-white" @click="showQueryModal = false">
+            <button class="bg-gray-600 hover:bg-gray-500 w-1/2 rounded text-white" @click="showQueryModal = false">
               <i class="fa-solid fa-times-circle mx-1"></i> Cancel
             </button>
-            <button class="bg-danger text-white p-1 w-1/2 rounded hover:bg-red-800" @click="rejectRequest">
+            <button class="bg-primary text-white p-1 w-1/2 rounded hover:bg-red-800" @click="rejectRequest">
               <i class="fa-solid fa-check-circle mx-1"></i> Confirm
             </button>
           </div>
