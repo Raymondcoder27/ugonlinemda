@@ -499,7 +499,7 @@ watch(
               <div v-if="application.status == 'Queried'">
                 <label>
                   <span
-                    class="text-xs cursor-pointer rounded-md px-1 py-0.5 font-semibold text-yellow-600 bg-yellow-100 border border-yellow-200 hover:text-yellow-700 hover:bg-yellow-200"
+                    class="text-xs cursor-pointer rounded-md px-1 py-0.5 font-semibold text-yellow-600 bg-yellow-100 border border-yellow-300 hover:text-yellow-700 hover:bg-yellow-200"
                     @click="view(application)"
                     >Queried</span
                   >
