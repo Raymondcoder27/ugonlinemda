@@ -39,7 +39,7 @@ const modalClass = computed(() => {
         xl4: { true: "max-w-4xl" },
         xl6: { true: "max-w-6xl" },
       },
-    },
+    }
   )({
     xs: props.xs,
     sm: props.sm,
