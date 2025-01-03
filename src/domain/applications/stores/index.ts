@@ -43,7 +43,7 @@ export const useApplications = defineStore("applications", () => {
     { id: 2, requestDate: "2021-09-02", serviceName: "Compnay Name Reservation", status: "Approved", applicant: "Tumuhairwe Rodgers", trackingNo: "TRK-001"},
     { id: 3, requestDate: "2021-09-03", serviceName: "Company Incorporation", status: "Rejected", applicant: "James Kangave", trackingNo: "TRK-001"},
     { id: 4, requestDate: "2021-09-04", serviceName: "Company Insolvency", status: "Pending", applicant: "Mpagi Ronald", trackingNo: "TRK-001"},
-    { id: 5, requestDate: "2021-09-05", serviceName: "Company Incorporation", status: "Pending", applicant: "Bruce Kakembo", trackingNo: "TRK-001"},
+    { id: 5, requestDate: "2021-09-05", serviceName: "File Returns", status: "Pending", applicant: "Bruce Kakembo", trackingNo: "TRK-001"},
   ];
 
   const serviceRequests: Ref<ServiceRequest[]> = ref(dummyServiceRequests);
