@@ -503,7 +503,7 @@ watch(
                     @click="view(application)"
                     >Queried</span
                   >
-                </label>    
+                </label>
               </div>
               <!-- <span>
                 {{ application.status }}
