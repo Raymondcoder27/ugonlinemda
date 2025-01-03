@@ -54,7 +54,7 @@ function rejectRequest() {
           >Service Requests</router-link
         >
         <span class="mx-2 text-gray-400">/</span>
-        <span class="text-gray-700 font-semibold">Request Details</span>
+        <span class="text-gray-700 font-semibold">Request Details  {{ $route.params.id }}</span>
       </div>
     <div class="flex py-2 px-2">
       <!-- Thumbnail and Info -->
