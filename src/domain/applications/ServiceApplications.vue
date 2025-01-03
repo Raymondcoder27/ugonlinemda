@@ -534,7 +534,7 @@ watch(
                   class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
                 > -->
                 <router-link
-                  to="`/mda/service-request-details/${application.id}`"
+                  :to="`/mda/service-request-details/${application.id}`"
                   class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
                 >
                   <i class="fa-solid fa-eye px-1"></i>
