@@ -5,18 +5,18 @@ import { useRoute } from "vue-router";
 
 const route = useRoute();
 
-const requestId = computed(() => route.params.requestId || 'unknown');
+const requestId = computed(() => route.params.requestId || "unknown");
 
 // const requestId = computed(() => {
 //   return route.params.requestId;
 // })
 
-
-watch(() => route.params.requestId, (newId) => {
-  console.log('New requestId:', newId);
-});
-
-
+watch(
+  () => route.params.requestId,
+  (newId) => {
+    console.log("New requestId:", newId);
+  }
+);
 
 const showApproveModal = ref(false);
 const showRejectModal = ref(false);
@@ -62,16 +62,18 @@ function rejectRequest() {
 </script>
 
 <template>
-  <div class="p-5 bg-white overflow-y-auto relative" style="max-height: 590px;">
+  <div class="p-5 bg-white overflow-y-auto relative" style="max-height: 590px">
     <div class="text-sm mb-4 bg-gray-10 py-2 rounded-sm">
-        <router-link
-          to="/mda/service-requests"
-          class="text-gray-500 hover:text-gray-700 ml-2"
-          >Service Requests</router-link
-        >
-        <span class="mx-2 text-gray-400">/</span>
-        <span class="text-gray-700 font-semibold">Request Details / {{ requestId }}</span>
-      </div>
+      <router-link
+        to="/mda/service-requests"
+        class="text-gray-500 hover:text-gray-700 ml-2"
+        >Service Requests</router-link
+      >
+      <span class="mx-2 text-gray-400">/</span>
+      <span class="text-gray-700 font-semibold"
+        >Request Details / {{ requestId }}</span
+      >
+    </div>
     <div class="flex py-2 px-2">
       <!-- Thumbnail and Info -->
       <div class="w-full">
@@ -80,7 +82,7 @@ function rejectRequest() {
             <!-- <img class="service-thumbnail" src="https://nira.go.ug/assets/exports/nira_logo_black@2x.png" /> -->
             <!-- use the one for ursb -->
             <!-- <img class="service-thumbnail" src="https://ursb.go.ug/assets/images/ug/Logo_Colour-01.jpg" /> -->
-             <!-- use the one for posta uganda -->
+            <!-- use the one for posta uganda -->
             <img class="w-[30px]" src="@/assets/images/eposta.png" />
           </div>
           <div class="w-11/12 my-auto">
@@ -89,7 +91,9 @@ function rejectRequest() {
           </div>
         </div>
         <!-- Request Details Card -->
-        <div class="flex justify-between bg-green-100 rounded p-2 border border-green-200 mt-4">
+        <div
+          class="flex justify-between bg-green-100 rounded p-2 border border-green-200 mt-4"
+        >
           <div class="">
             <p class="text-sm font-bold pt-3">Tracking Number:</p>
             <p class="text-sm">123456</p>
@@ -107,12 +111,19 @@ function rejectRequest() {
         <!-- Applicant Details -->
         <div class="mt-5 mb-5 flex px-2 justify-between">
           <div>
-            <span class="block text-sm font-bold text-gray-500">Applicant Name:</span>
+            <span class="block text-sm font-bold text-gray-500"
+              >Applicant Name:</span
+            >
             <span class="block text-sm text-gray-800">Mwebe Raymond</span>
           </div>
           <div>
-            <span class="block text-sm font-bold text-gray-500">Details Used:</span>
-            <span class="block text-sm text-blue-600 hover:underline hover:cursor-pointer">NATIONAL ID</span>
+            <span class="block text-sm font-bold text-gray-500"
+              >Details Used:</span
+            >
+            <span
+              class="block text-sm text-blue-600 hover:underline hover:cursor-pointer"
+              >NATIONAL ID</span
+            >
           </div>
           <div>
             <span class="block text-sm font-bold text-gray-500">Date:</span>
@@ -137,15 +148,24 @@ function rejectRequest() {
         </div>
         <!-- Action Buttons -->
         <div class="flex justify-center space-x-4 mt-6">
-          <button @click="showQueryModal = true" class="px-4 py-1 bg-amber-600 text-white rounded-md hover:bg-amber-500 transition">
+          <button
+            @click="showQueryModal = true"
+            class="px-4 py-1 bg-amber-600 text-white rounded-md hover:bg-amber-500 transition"
+          >
             <i class="fa fa-exclamation-circle"></i>
             Query
           </button>
-          <button @click="showRejectModal = true" class="px-4 py-1 bg-red-700 text-white rounded-md hover:bg-red-600 transition">
+          <button
+            @click="showRejectModal = true"
+            class="px-4 py-1 bg-red-700 text-white rounded-md hover:bg-red-600 transition"
+          >
             <i class="fa fa-times-square"></i>
             Reject
           </button>
-          <button @click="showApproveModal = true" class="px-4 py-1 bg-green-700 text-white rounded-md hover:bg-green-600 transition">
+          <button
+            @click="showApproveModal = true"
+            class="px-4 py-1 bg-green-700 text-white rounded-md hover:bg-green-600 transition"
+          >
             <i class="fa fa-check"></i>
             Approve
           </button>
@@ -159,15 +179,25 @@ function rejectRequest() {
         <div class="w-full">
           <div class="flex">
             <span class="mx-auto text-center justify-center">
-              <i class="mx-auto fa-solid fa-exclamation-circle text-3xl text-danger"></i>
+              <i
+                class="mx-auto fa-solid fa-exclamation-circle text-3xl text-danger"
+              ></i>
             </span>
           </div>
-          <p class="py-5 text-center">Are you sure you want to approve this service request?</p>
+          <p class="py-5 text-center">
+            Are you sure you want to approve this service request?
+          </p>
           <div class="flex w-1/2 gap-2 justify-center mx-auto">
-            <button class="bg-gray-600 hover:bg-gray-500 w-1/2 rounded text-white" @click="showApproveModal = false">
+            <button
+              class="bg-gray-600 hover:bg-gray-500 w-1/2 rounded text-white"
+              @click="showApproveModal = false"
+            >
               <i class="fa-solid fa-times-circle mx-1"></i> Cancel
             </button>
-            <button class="bg-green-700 text-white p-1 w-1/2 rounded hover:bg-green-800" @click="rejectRequest">
+            <button
+              class="bg-green-700 text-white p-1 w-1/2 rounded hover:bg-green-800"
+              @click="rejectRequest"
+            >
               <i class="fa-solid fa-check-circle mx-1"></i> Confirm
             </button>
           </div>
@@ -181,15 +211,25 @@ function rejectRequest() {
         <div class="w-full">
           <div class="flex">
             <span class="mx-auto text-center justify-center">
-              <i class="mx-auto fa-solid fa-exclamation-circle text-3xl text-danger"></i>
+              <i
+                class="mx-auto fa-solid fa-exclamation-circle text-3xl text-danger"
+              ></i>
             </span>
           </div>
-          <p class="py-5 text-center">Are you sure you want to reject this service request?</p>
+          <p class="py-5 text-center">
+            Are you sure you want to reject this service request?
+          </p>
           <div class="flex w-1/2 gap-2 justify-center mx-auto">
-            <button class="bg-gray-600 hover:bg-gray-500 w-1/2 rounded text-white" @click="showRejectModal = false">
+            <button
+              class="bg-gray-600 hover:bg-gray-500 w-1/2 rounded text-white"
+              @click="showRejectModal = false"
+            >
               <i class="fa-solid fa-times-circle mx-1"></i> Cancel
             </button>
-            <button class="bg-green-700 text-white p-1 w-1/2 rounded hover:bg-green-800" @click="rejectRequest">
+            <button
+              class="bg-green-700 text-white p-1 w-1/2 rounded hover:bg-green-800"
+              @click="rejectRequest"
+            >
               <i class="fa-solid fa-check-circle mx-1"></i> Confirm
             </button>
           </div>
@@ -203,15 +243,25 @@ function rejectRequest() {
         <div class="w-full">
           <div class="flex">
             <span class="mx-auto text-center justify-center">
-              <i class="mx-auto fa-solid fa-exclamation-circle text-3xl text-danger"></i>
+              <i
+                class="mx-auto fa-solid fa-exclamation-circle text-3xl text-danger"
+              ></i>
             </span>
           </div>
-          <p class="py-5 text-center">Are you sure you want to query this service request?</p>
+          <p class="py-5 text-center">
+            Are you sure you want to query this service request?
+          </p>
           <div class="flex w-1/2 gap-2 justify-center mx-auto">
-            <button class="bg-gray-600 hover:bg-gray-500 w-1/2 rounded text-white" @click="showQueryModal = false">
+            <button
+              class="bg-gray-600 hover:bg-gray-500 w-1/2 rounded text-white"
+              @click="showQueryModal = false"
+            >
               <i class="fa-solid fa-times-circle mx-1"></i> Cancel
             </button>
-            <button class="bg-green-700 text-white p-1 w-1/2 rounded hover:bg-green-800" @click="rejectRequest">
+            <button
+              class="bg-green-700 text-white p-1 w-1/2 rounded hover:bg-green-800"
+              @click="rejectRequest"
+            >
               <i class="fa-solid fa-check-circle mx-1"></i> Confirm
             </button>
           </div>
