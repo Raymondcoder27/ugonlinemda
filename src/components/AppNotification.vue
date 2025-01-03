@@ -11,7 +11,7 @@ const Positions: readonly [
   "top-right",
   "bottom-center",
   "bottom-right",
-  "bottom-left",
+  "bottom-left"
 ] = [
   "top-center",
   "top-left",
@@ -43,7 +43,7 @@ const notificationClass = computed(() => {
           "bottom-right": "ml-auto bottom-20 right-4",
         },
       },
-    },
+    }
   )({
     intent: props.position,
   });
@@ -62,7 +62,7 @@ watch(
       timeOutAlert();
     }
   },
-  { deep: true },
+  { deep: true }
 );
 const stick = () => {
   if (timeOut.value !== undefined) {
@@ -75,15 +75,29 @@ const stick = () => {
 <template>
   <template v-if="notifications.visible" class="">
     <!-- Success -->
-    <div v-if="notifications.theme === 'success'" :class="notificationClass" class="border-success-700">
+    <div
+      v-if="notifications.theme === 'success'"
+      :class="notificationClass"
+      class="border-success-700"
+    >
       <div class="absolute flex space-x-2 top-1 right-1.5">
-        <i @click="stick()" :class="`text-success-800`"
-          class="cursor-pointer mt-auto text-sm fa-solid fa-thumbtack"></i>
-        <i @click="notifications.hide()" :class="`text-success-800`" class="cursor-pointer fa-solid fa-xmark"></i>
+        <i
+          @click="stick()"
+          :class="`text-success-800`"
+          class="cursor-pointer mt-auto text-sm fa-solid fa-thumbtack"
+        ></i>
+        <i
+          @click="notifications.hide()"
+          :class="`text-success-800`"
+          class="cursor-pointer fa-solid fa-xmark"
+        ></i>
       </div>
       <div class="flex space-x-1.5 w-full h-full">
         <div :class="`bg-success-200`" class="my-auto flex rounded-full p-1.5">
-          <i :class="`text-success-700`" class="m-auto fa-2x fa-solid fa-circle-check"></i>
+          <i
+            :class="`text-success-700`"
+            class="m-auto fa-2x fa-solid fa-circle-check"
+          ></i>
         </div>
         <div class="text-xs flex-wrap my-auto pr-1.5">
           {{ notifications.message }}
@@ -93,15 +107,29 @@ const stick = () => {
     <!-- /Success -->
 
     <!-- Primary -->
-    <div v-if="notifications.theme === 'primary'" :class="notificationClass" class="border-primary-700">
+    <div
+      v-if="notifications.theme === 'primary'"
+      :class="notificationClass"
+      class="border-primary-700"
+    >
       <div class="absolute flex space-x-2 top-1 right-1.5">
-        <i @click="stick()" :class="`text-primary-800`"
-          class="cursor-pointer mt-auto text-sm fa-solid fa-thumbtack"></i>
-        <i @click="notifications.hide()" :class="`text-primary-800`" class="cursor-pointer fa-solid fa-xmark"></i>
+        <i
+          @click="stick()"
+          :class="`text-primary-800`"
+          class="cursor-pointer mt-auto text-sm fa-solid fa-thumbtack"
+        ></i>
+        <i
+          @click="notifications.hide()"
+          :class="`text-primary-800`"
+          class="cursor-pointer fa-solid fa-xmark"
+        ></i>
       </div>
       <div class="flex space-x-1.5 w-full h-full">
         <div :class="`bg-primary-200`" class="my-auto flex rounded-full p-1.5">
-          <i :class="`text-primary-700`" class="m-auto fa-2x fa-solid fa-circle-info"></i>
+          <i
+            :class="`text-primary-700`"
+            class="m-auto fa-2x fa-solid fa-circle-info"
+          ></i>
         </div>
         <div class="text-xs flex-wrap my-auto pr-1.5">
           {{ notifications.message }}
@@ -111,15 +139,29 @@ const stick = () => {
     <!-- /Primary -->
 
     <!-- Warning -->
-    <div v-if="notifications.theme === 'warning'" :class="notificationClass" class="border-warning-700">
+    <div
+      v-if="notifications.theme === 'warning'"
+      :class="notificationClass"
+      class="border-warning-700"
+    >
       <div class="absolute flex space-x-2 top-1 right-1.5">
-        <i @click="stick()" :class="`text-warning-800`"
-          class="cursor-pointer mt-auto text-sm fa-solid fa-thumbtack"></i>
-        <i @click="notifications.hide()" :class="`text-warning-800`" class="cursor-pointer fa-solid fa-xmark"></i>
+        <i
+          @click="stick()"
+          :class="`text-warning-800`"
+          class="cursor-pointer mt-auto text-sm fa-solid fa-thumbtack"
+        ></i>
+        <i
+          @click="notifications.hide()"
+          :class="`text-warning-800`"
+          class="cursor-pointer fa-solid fa-xmark"
+        ></i>
       </div>
       <div class="flex space-x-1.5 w-full h-full">
         <div :class="`bg-warning-200`" class="my-auto flex rounded-full p-1.5">
-          <i :class="`text-warning-700`" class="m-auto fa-2x fa-solid fa-circle-exclamation"></i>
+          <i
+            :class="`text-warning-700`"
+            class="m-auto fa-2x fa-solid fa-circle-exclamation"
+          ></i>
         </div>
         <div class="text-xs flex-wrap my-auto pr-1.5">
           {{ notifications.message }}
@@ -129,14 +171,29 @@ const stick = () => {
     <!-- /Warning -->
 
     <!-- Danger -->
-    <div v-if="notifications.theme === 'danger'" :class="notificationClass" class="border-danger-700">
+    <div
+      v-if="notifications.theme === 'danger'"
+      :class="notificationClass"
+      class="border-danger-700"
+    >
       <div class="absolute flex space-x-2 top-1 right-1.5">
-        <i @click="stick()" :class="`text-danger-800`" class="cursor-pointer mt-auto text-sm fa-solid fa-thumbtack"></i>
-        <i @click="notifications.hide()" :class="`text-danger-800`" class="cursor-pointer fa-solid fa-xmark"></i>
+        <i
+          @click="stick()"
+          :class="`text-danger-800`"
+          class="cursor-pointer mt-auto text-sm fa-solid fa-thumbtack"
+        ></i>
+        <i
+          @click="notifications.hide()"
+          :class="`text-danger-800`"
+          class="cursor-pointer fa-solid fa-xmark"
+        ></i>
       </div>
       <div class="flex space-x-1.5 w-full h-full">
         <div :class="`bg-danger-200`" class="my-auto flex rounded-full p-1.5">
-          <i :class="`text-danger-700`" class="m-auto fa-2x fa-solid fa-circle-xmark"></i>
+          <i
+            :class="`text-danger-700`"
+            class="m-auto fa-2x fa-solid fa-circle-xmark"
+          ></i>
         </div>
         <div class="text-xs flex-wrap my-auto pr-1.5">
           {{ notifications.message }}
@@ -146,14 +203,29 @@ const stick = () => {
     <!-- /Danger -->
 
     <!-- Info -->
-    <div v-if="notifications.theme === 'info'" :class="notificationClass" class="border-info-700">
+    <div
+      v-if="notifications.theme === 'info'"
+      :class="notificationClass"
+      class="border-info-700"
+    >
       <div class="absolute flex space-x-2 top-1 right-1.5">
-        <i @click="stick()" :class="`text-info-800`" class="cursor-pointer mt-auto text-sm fa-solid fa-thumbtack"></i>
-        <i @click="notifications.hide()" :class="`text-info-800`" class="cursor-pointer fa-solid fa-xmark"></i>
+        <i
+          @click="stick()"
+          :class="`text-info-800`"
+          class="cursor-pointer mt-auto text-sm fa-solid fa-thumbtack"
+        ></i>
+        <i
+          @click="notifications.hide()"
+          :class="`text-info-800`"
+          class="cursor-pointer fa-solid fa-xmark"
+        ></i>
       </div>
       <div class="flex space-x-1.5 w-full h-full">
         <div :class="`bg-info-200`" class="my-auto flex rounded-full p-1.5">
-          <i :class="`text-info-700`" class="m-auto fa-2x fa-solid fa-circle-info"></i>
+          <i
+            :class="`text-info-700`"
+            class="m-auto fa-2x fa-solid fa-circle-info"
+          ></i>
         </div>
         <div class="text-xs flex-wrap my-auto pr-1.5">
           {{ notifications.message }}
