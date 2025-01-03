@@ -533,13 +533,13 @@ watch(
                   to="/mda/service-request-details/:requestId"
                   class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
                 > -->
-                <router-link
+                <!-- <router-link
                   :to="`/mda/service-request-details/${application.id}`"
                   class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
                 >
                   <i class="fa-solid fa-eye px-1"></i>
                   View Details</router-link
-                >
+                > -->
                 <a :href="`/mda/service-request-details/${application.id}`">View Details</a>
 
 
