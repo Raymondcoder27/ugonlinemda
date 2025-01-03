@@ -70,9 +70,6 @@ const updateFilter = useDebounceFn(
   { maxWait: 5000 }
 );
 
-const route =  useRoute();
-
-
 
 // Watch for changes in the filter object
 watch(
