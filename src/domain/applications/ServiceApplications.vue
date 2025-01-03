@@ -529,13 +529,20 @@ watch(
                   <i class="fa-solid fa-times-square px-1"></i> 
                   Reject
                 </button> -->
-                <router-link
+                <!-- <router-link
                   to="/mda/service-request-details/:requestId"
+                  class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
+                > -->
+                <router-link
+                to="`/mda/service-request-details/${application.id}`"
                   class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
                 >
                   <i class="fa-solid fa-eye px-1"></i>
                   View Details</router-link
                 >
+
+
+
                 <!-- <button
                   class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
                   @click="viewRequestDetails(application.id)"
