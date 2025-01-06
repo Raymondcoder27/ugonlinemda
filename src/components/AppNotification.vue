@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useNotificationsStore } from "@/stores/notifications";
 import { cva } from "class-variance-authority";
-import { computed, ref, watch, type PropType, type Ref } from "vue";
+import { computed, ref, watch, type PropType, type Ref, defineProps } from "vue";
 
 const notifications = useNotificationsStore();
 // alert positions

@@ -76,6 +76,24 @@ const viewRequestDetails = (id: string) => {
   store.viewServiceRequest(id);
 };
 
+// function fetch() {
+//   loading.value = true;
+//   store
+//     .fetchApplications(
+//       trackingNumber.value,
+//       serviceId.value,
+//       providerId.value,
+//       status.value,
+//       page.value,
+//       limit.value
+//     )
+//     .then(() => (loading.value = false))
+//     .catch((error: ApiError) => {
+//       loading.value = false;
+//       notify.error(error.response.data.message);
+//     });
+// }
+
 function fetch() {
   loading.value = true;
   store
@@ -87,11 +105,12 @@ function fetch() {
       page.value,
       limit.value
     )
-    .then(() => (loading.value = false))
-    .catch((error: ApiError) => {
-      loading.value = false;
-      notify.error(error.response.data.message);
-    });
+    // .then(() => (loading.value = false))
+    // .catch((error: ApiError) => {
+    //   loading.value = false;
+    //   notify.error(error.response.data.message);
+    // });
+    loading.value = false;
 }
 function view(application: ClientApplication) {
   modalOpen.value = true;
@@ -533,20 +552,20 @@ watch(
                   to="/mda/service-request-details/:requestId"
                   class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
                 > -->
-                <!-- <router-link
+                <router-link
                   :to="`/mda/service-request-details/${application.id}`"
                   class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
                 >
                   <i class="fa-solid fa-eye px-1"></i>
                   View Details</router-link
-                > -->
-                <a
+                >
+                <!-- <a
                   class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
                   :href="`/mda/service-request-details/${application.id}`"
                 >
                   <i class="fa-solid fa-eye px-1"></i>
                   View Details</a
-                >
+                > -->
 
                 <!-- <button
                   class="bg-green-600 rounded py-1 px-1 text-white hover:bg-green-700"
